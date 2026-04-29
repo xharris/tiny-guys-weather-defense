@@ -1,4 +1,5 @@
 extends Node
 
-var entities = &"entities"
-var base = &"base"
+const entities = &"entities"
+const base = &"base"
+const enemy = &"enemy"

@@ -2,10 +2,8 @@ extends Resource
 class_name OnHitEffect
 
 @export var name: String
-@export var target_self: bool
 @export var hit_self: bool
-@export var hit_ally: bool
-@export var hit_enemy: bool = true
+@export_enum(Groups.base, Groups.enemy) var hit_groups: Array[String]
 
 func apply():
     pass

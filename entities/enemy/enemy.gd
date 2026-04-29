@@ -13,9 +13,10 @@ static var HP = preload("res://resources/curves/enemy_hp.tres")
 @export var config: EnemyConfig
 
 func _ready() -> void:
+    add_to_group(Groups.enemy)
     hp.died.connect(_on_died)
     hitbox.apply_on_hit.connect(_on_apply_on_hit)
-    
+
     state.character = self
     hp.current = HP.sample(0)
     if config:
@@ -28,7 +29,7 @@ func _on_apply_on_hit(_source: Hitbox, on_hit: OnHitEffect):
 func _on_died():
     var parent = get_parent()
     if parent:
-        parent.remove_child(self)
+        parent.remove_child.call_deferred(self)
 
 func _process(delta: float) -> void:
     state.character = self

@@ -3,7 +3,7 @@ class_name StateMoveToward
 
 static var VELOCITY = preload("res://resources/curves/move_toward_velocity.tres")
 
-@export_range(0, 1, 0.2) var velocity: float = 0.0
+@export_range(0, 1, 0.1) var velocity: float = 0.0
 
 func _process(me: StateMachine, delta: float):
     var base = Base.get_closest(me)

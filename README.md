@@ -3,7 +3,7 @@
 ## TODO
 
 - [x] base is in center of screen
-- [ ] wizard is controlled by player
+- [x] wizard is controlled by player
     - [x] mouse position determines aim
     - [x] aim determines rotation around base
     - [x] primary uses ability
@@ -12,11 +12,26 @@
         - [x] does damage
 - enemies
     - [x] appear from outside of screen
-    - [ ] fly
+    - [x] fly
         - [x] state: flying (1s) to random location closer to base
         - [x] state: idle (1s)
-    - [ ] enemy touches base, deals damage, then leaves
-- [ ] base loses all hp: lose
+    - [x] enemy touches base, deals damage, then leaves
+- [ ] ui: game over
+    - [ ] stop waves
+    - [ ] show stats
+        - [ ] total waves
+        - [ ] total kills
+        - [ ] total for each enemy type
+        - [ ] accuracy (polish)
+        - [ ] grade (polish)
+    - [ ] can restart
+- [ ] ui: ability cooldowns
+- [x] wave
+    - [x] time between spawns
+    - [x] enemies
+- [ ] every X waves, add an ability
+    - [ ] pick from 2-3
+    - [ ] countdown timer to pick?
 - more enemies
     - [ ] ant
     - [ ] spider

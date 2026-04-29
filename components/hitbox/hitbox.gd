@@ -1,7 +1,7 @@
 extends Area2D
 class_name Hitbox
 
-var _dev = Dev.new(true)
+var _dev = Dev.new()
 
 static var C_HITBOX = Color.html("#F44336")
 static var C_HURTBOX = Color.html("#4CAF50")
@@ -9,9 +9,20 @@ static var C_HURTBOX = Color.html("#4CAF50")
 static func apply_on_hits(src: Hitbox, target: Hitbox, on_hits: Array[OnHitEffect]):
     for on_hit in on_hits:
         var real_target = target
-        if on_hit.target_self:
+        # can hit self
+        if on_hit.hit_self:
             real_target = src
-        src._dev.dump("apply {0} to {1}", [real_target.get_path()])
+        if not real_target.is_inside_tree():
+            return
+        # can only hit certain groups
+        var skip = false
+        for group in on_hit.hit_groups:
+            if not real_target.owner or not real_target.owner.is_in_group(group):
+                skip = true
+                break
+        if skip:
+            continue
+        src._dev.dump("apply '{0}' to {1}", [on_hit.name, real_target.get_path()])
         real_target.apply_on_hit.emit(src, on_hit)
         on_hit.apply()
 
@@ -50,8 +61,8 @@ func _on_area_entered(area: Area2D):
 func _process(delta: float) -> void:
     set_collision_layer_value(1, is_hitbox)
     set_collision_layer_value(2, is_hurtbox)
-    set_collision_mask_value(1, not is_hitbox)
-    set_collision_mask_value(2, not is_hurtbox)
+    set_collision_mask_value(1, false)
+    set_collision_mask_value(2, is_hitbox)
     for node in find_children("*"):
         if node is CollisionShape2D:
             # color

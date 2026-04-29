@@ -6,5 +6,5 @@
 script = ExtResource("1_6bjqu")
 kills = true
 name = "kill self"
-target_self = true
+hit_self = true
 metadata/_custom_type_script = "uid://bf1g37y7f2yb1"

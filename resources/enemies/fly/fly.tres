@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://tt4rv2874odu" path="res://entities/enemy/enemy_config.gd" id="1_4houe"]
 [ext_resource type="Script" uid="uid://rauoa0p62aej" path="res://components/hitbox/on_hit_effect.gd" id="1_4tw1f"]
 [ext_resource type="Resource" uid="uid://ddnodgc0mfxma" path="res://resources/enemies/fly/fly_move.tres" id="1_q18pk"]
-[ext_resource type="Resource" uid="uid://dtdb1qgwtwu1x" path="res://resources/on_hit_effects/deal_low_damage.tres" id="2_4tw1f"]
+[ext_resource type="Resource" uid="uid://cpkddwttp2bn3" path="res://resources/on_hit_effects/enemy_deal_low_damage.tres" id="2_has0f"]
 [ext_resource type="Texture2D" uid="uid://bv1t88mfgydri" path="res://resources/enemies/fly/fly.png" id="2_q18pk"]
 [ext_resource type="Resource" uid="uid://brq3ia3f0qkhi" path="res://resources/on_hit_effects/kill_self.tres" id="3_has0f"]
 
@@ -12,5 +12,5 @@ script = ExtResource("1_4houe")
 name = "fly"
 sprite = ExtResource("2_q18pk")
 initial_state = ExtResource("1_q18pk")
-hitbox_on_hit_effects = Array[ExtResource("1_4tw1f")]([ExtResource("2_4tw1f"), ExtResource("3_has0f")])
+hitbox_on_hit_effects = Array[ExtResource("1_4tw1f")]([ExtResource("2_has0f"), ExtResource("3_has0f")])
 metadata/_custom_type_script = "uid://tt4rv2874odu"

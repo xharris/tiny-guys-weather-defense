@@ -1,7 +1,7 @@
 extends Node2D
 class_name Hp
 
-var _dev = Dev.new(true)
+var _dev = Dev.new()
 
 signal died
 signal damaged(amount: int)
@@ -9,6 +9,8 @@ signal damaged(amount: int)
 @export var current: int = 0
 
 func take_damage(amount: int):
+    if not is_inside_tree():
+        return
     _dev.dump("{0} take {1} damage", [get_path(), amount])
     var prev_current = current
     current = max(0, current - amount)
