@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://bjc2x8woww8fs"]
+
+[ext_resource type="Script" uid="uid://qn751olbucor" path="res://levels/play/play.gd" id="1_svcyk"]
+[ext_resource type="PackedScene" uid="uid://bwbmv4jddck8m" path="res://entities/base/base.tscn" id="2_tpncu"]
+[ext_resource type="PackedScene" uid="uid://b4v2slhf7k5g8" path="res://entities/player/player.tscn" id="3_avta7"]
+[ext_resource type="Script" uid="uid://bcdlpi4kh3yyv" path="res://components/ability_controller/ability.gd" id="4_2aax8"]
+[ext_resource type="Resource" uid="uid://bwk6roq727511" path="res://resources/abilities/raindrop/raindrop.tres" id="5_2aax8"]
+
+[node name="Play" type="Node2D" unique_id=1968432817]
+script = ExtResource("1_svcyk")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=149499507]
+unique_name_in_owner = true
+position = Vector2(0, -12)
+zoom = Vector2(2, 2)
+position_smoothing_enabled = true
+position_smoothing_speed = 2.0
+
+[node name="Entities" type="Node2D" parent="." unique_id=274861770]
+unique_name_in_owner = true
+y_sort_enabled = true
+
+[node name="Base" parent="Entities" unique_id=1595243073 instance=ExtResource("2_tpncu")]
+unique_name_in_owner = true
+
+[node name="Player" parent="Entities" unique_id=980467936 node_paths=PackedStringArray("base") instance=ExtResource("3_avta7")]
+unique_name_in_owner = true
+base = NodePath("../Base")
+abilities = Array[ExtResource("4_2aax8")]([ExtResource("5_2aax8")])

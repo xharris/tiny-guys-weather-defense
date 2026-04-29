@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="AbilityDrop" format=3 uid="uid://bwk6roq727511"]
+
+[ext_resource type="Script" uid="uid://81aytbj1kgv4" path="res://entities/abilities/drop/drop_config.gd" id="1_hvl04"]
+[ext_resource type="Texture2D" uid="uid://dw1bji3w8phku" path="res://resources/abilities/raindrop/orb.png" id="2_ifail"]
+[ext_resource type="Resource" uid="uid://d2cp40t13bntx" path="res://resources/abilities/raindrop/raindrop_trail.tres" id="3_f0cg8"]
+
+[resource]
+script = ExtResource("1_hvl04")
+sprite = ExtResource("2_ifail")
+trail = ExtResource("3_f0cg8")
+name = "raindrop"
+metadata/_custom_type_script = "uid://81aytbj1kgv4"

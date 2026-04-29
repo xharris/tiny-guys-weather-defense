@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://m0ls3lnutwcu"]
+
+[ext_resource type="Script" uid="uid://dbo2l576w00ss" path="res://components/player_sprite/player_sprite.gd" id="1_7030n"]
+[ext_resource type="Texture2D" uid="uid://fvsimfawgtyq" path="res://components/player_sprite/wizard.png" id="1_vg45v"]
+[ext_resource type="Texture2D" uid="uid://dweysu0ccxbcq" path="res://components/player_sprite/hand_wand.png" id="1_yhgc0"]
+
+[node name="PlayerSprite" type="Node2D" unique_id=589942968]
+script = ExtResource("1_7030n")
+
+[node name="BodyFaceDirection" type="Node2D" parent="." unique_id=262388703]
+unique_name_in_owner = true
+
+[node name="Body" type="Sprite2D" parent="BodyFaceDirection" unique_id=277144361]
+texture = ExtResource("1_vg45v")
+
+[node name="Arm" type="Node2D" parent="." unique_id=1009298897]
+unique_name_in_owner = true
+
+[node name="Wand" type="Sprite2D" parent="Arm" unique_id=569361062]
+position = Vector2(0, -10)
+texture = ExtResource("1_yhgc0")
+
+[node name="WandTip" type="Marker2D" parent="Arm" unique_id=887555633]
+unique_name_in_owner = true
+position = Vector2(0, -26)

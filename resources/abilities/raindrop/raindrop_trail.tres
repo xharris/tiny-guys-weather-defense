@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="TrailConfig" format=3 uid="uid://d2cp40t13bntx"]
+
+[ext_resource type="Script" uid="uid://cofqwobfspo52" path="res://components/trail/trail_config.gd" id="1_71cda"]
+
+[resource]
+script = ExtResource("1_71cda")
+metadata/_custom_type_script = "uid://cofqwobfspo52"

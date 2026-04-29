@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://binmtsj5in1fy"]
+
+[ext_resource type="Script" uid="uid://ca8ohraxbuaye" path="res://components/trail/trail.gd" id="1_khb0s"]
+
+[sub_resource type="Curve" id="Curve_khb0s"]
+_data = [Vector2(0, 0), 0.0, 1.4, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[node name="Trail" type="Node2D" unique_id=416214288]
+script = ExtResource("1_khb0s")
+
+[node name="Line2D" type="Line2D" parent="." unique_id=490297757]
+unique_name_in_owner = true
+top_level = true
+points = PackedVector2Array(15, -14, 43, -39, 88, -12)
+width_curve = SubResource("Curve_khb0s")

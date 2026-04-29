@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://r8ndb4yrfeau"]
+
+[ext_resource type="Script" uid="uid://2aj3wccu0hjc" path="res://components/ability_controller/ability_controller.gd" id="1_6emww"]
+
+[node name="AbilityController" type="Node2D" unique_id=62650995]
+script = ExtResource("1_6emww")
+abilities = null

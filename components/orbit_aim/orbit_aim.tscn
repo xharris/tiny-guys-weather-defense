@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://iup8dkigcfy1"]
+
+[ext_resource type="Script" uid="uid://b2wuorieiq05e" path="res://components/orbit_aim/orbit_aim.gd" id="1_hryux"]
+[ext_resource type="Texture2D" uid="uid://vdowauggh0ru" path="res://components/orbit_aim/target.png" id="2_ussfr"]
+
+[node name="OrbitAim" type="Node2D" unique_id=1115233010]
+script = ExtResource("1_hryux")
+
+[node name="Squeeze" type="Node2D" parent="." unique_id=2067903353]
+scale = Vector2(2, 1)
+
+[node name="Transform" type="Node2D" parent="Squeeze" unique_id=1787474769]
+unique_name_in_owner = true
+
+[node name="Target" type="Sprite2D" parent="Squeeze/Transform" unique_id=602228993]
+unique_name_in_owner = true
+modulate = Color(0, 0, 0, 0.12156863)
+texture = ExtResource("2_ussfr")
