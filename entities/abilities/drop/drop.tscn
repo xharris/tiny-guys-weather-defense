@@ -20,7 +20,6 @@ shape = SubResource("CircleShape2D_088uo")
 
 [node name="RemoveTimer" type="Timer" parent="." unique_id=753551997]
 unique_name_in_owner = true
-wait_time = 0.2
 one_shot = true
 
 [node name="Vfx" parent="." unique_id=1398465369 instance=ExtResource("3_25dvl")]

@@ -1,7 +1,7 @@
 extends Node2D
 class_name StateMachine
 
-var _dev = Dev.new(true)
+var _dev = Dev.new()
 
 @export var character: CharacterBody2D
 var current: State

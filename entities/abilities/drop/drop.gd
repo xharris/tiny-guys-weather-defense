@@ -22,14 +22,16 @@ var _t: float = 0
 
 func _ready() -> void:
     remove_timer.timeout.connect(_on_remove_timer)
-    
     sprite.texture = config.sprite
+    hitbox.on_hit_effects = config.on_hit_effects
+    
     if not sprite.texture:
         _dev.warn("no sprite texture provided in {0}", [config.resource_path.get_file()])
     hitbox.disabled = true
     # place above top of view
     var screen_top_world = get_canvas_transform().affine_inverse() * Vector2.ZERO
-    start_position = Vector2(ctx.ctrl.aim_position.x + slant + config.slant, screen_top_world.y)
+    var screen_height = get_viewport_rect().size.y
+    start_position = Vector2(ctx.ctrl.aim_position.x + slant + config.slant, ctx.ctrl.aim_position.y - screen_height)
     target_position = ctx.ctrl.aim_position
     global_position = start_position
     _dev.dump("mouse {2}, start {0}, target {1}", [start_position, target_position, get_global_mouse_position()])
@@ -45,14 +47,16 @@ func _process(delta: float) -> void:
     sprite.modulate = config.sprite_color
     
     var progress = clampf(_t / 2.0, 0, 1)
-    if progress >= 1.0 and vfx.visible:
+    if progress >= 1.0 and vfx.is_playing():
         # enable hitbox when ground reached
+        _dev.dump("arrived at target")
         vfx.stop()
-        hitbox.disabled = false
+        hitbox.enable()
+        remove_timer.wait_time = config.remove_wait_time
         remove_timer.start()
         
     elif progress < 1.0:
         # fall to ground
-        _t += delta * 0.2 * FALL_SPEED_CURVE.sample(config.fall_speed)
+        _t += delta * 0.06 * FALL_SPEED_CURVE.sample(config.fall_speed)
         _dev.dump("t {0}, progress {1}", [_t, progress])
         global_position = lerp(start_position, target_position, progress)

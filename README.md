@@ -9,7 +9,7 @@
     - [x] primary uses ability
 - abilities
     - [x] rain drop at aim location
-        - [ ] does damage
+        - [x] does damage
 - enemies
     - [x] appear from outside of screen
     - [ ] fly

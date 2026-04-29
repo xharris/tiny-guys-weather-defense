@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bp61l4mjhw2r" path="res://components/base_sprite/base_sprite.tscn" id="1_3i11b"]
 [ext_resource type="Script" uid="uid://gnulgf0krh4m" path="res://entities/base/base.gd" id="1_qyh2h"]
+[ext_resource type="PackedScene" uid="uid://rsij4bxwpmrc" path="res://components/hitbox/hitbox.tscn" id="3_0e5r6"]
 [ext_resource type="PackedScene" uid="uid://hgobe6jntfw6" path="res://components/hp/hp.tscn" id="3_6xdyk"]
 
 [node name="Base" type="Node2D" unique_id=1595243073]
@@ -11,6 +12,11 @@ script = ExtResource("1_qyh2h")
 unique_name_in_owner = true
 position = Vector2(0, 2)
 
+[node name="Hitbox" parent="." unique_id=1761563124 instance=ExtResource("3_0e5r6")]
+unique_name_in_owner = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=1388755615]
+unique_name_in_owner = true
+
 [node name="Hp" parent="." unique_id=1543573155 instance=ExtResource("3_6xdyk")]
 unique_name_in_owner = true
-max = 10

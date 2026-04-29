@@ -3,8 +3,13 @@
 [ext_resource type="Script" uid="uid://tcqmfhnchexm" path="res://entities/base/base_config.gd" id="1_t8ne5"]
 [ext_resource type="Texture2D" uid="uid://c11hinjqab428" path="res://resources/base_configs/cube.png" id="2_woms0"]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_woms0"]
+radius = 3.0
+height = 12.0
+
 [resource]
 script = ExtResource("1_t8ne5")
 sprite = ExtResource("2_woms0")
 radius = 8.0
+hitbox_shape = SubResource("CapsuleShape2D_woms0")
 metadata/_custom_type_script = "uid://tcqmfhnchexm"

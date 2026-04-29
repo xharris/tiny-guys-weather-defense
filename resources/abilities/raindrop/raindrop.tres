@@ -1,6 +1,8 @@
 [gd_resource type="Resource" script_class="AbilityDrop" format=3 uid="uid://bwk6roq727511"]
 
 [ext_resource type="Script" uid="uid://81aytbj1kgv4" path="res://entities/abilities/drop/drop_config.gd" id="1_hvl04"]
+[ext_resource type="Script" uid="uid://rauoa0p62aej" path="res://components/hitbox/on_hit_effect.gd" id="1_sx7ks"]
+[ext_resource type="Resource" uid="uid://dtdb1qgwtwu1x" path="res://resources/on_hit_effects/deal_low_damage.tres" id="2_bk0aj"]
 [ext_resource type="Texture2D" uid="uid://dw1bji3w8phku" path="res://resources/abilities/raindrop/orb.png" id="2_ifail"]
 [ext_resource type="Resource" uid="uid://d2cp40t13bntx" path="res://resources/abilities/raindrop/raindrop_trail.tres" id="3_f0cg8"]
 
@@ -10,5 +12,6 @@ sprite = ExtResource("2_ifail")
 sprite_color = Color(0.011764706, 0.6627451, 0.95686275, 1)
 slant = 50.0
 trail = ExtResource("3_f0cg8")
+on_hit_effects = Array[ExtResource("1_sx7ks")]([ExtResource("2_bk0aj")])
 name = "raindrop"
 metadata/_custom_type_script = "uid://81aytbj1kgv4"

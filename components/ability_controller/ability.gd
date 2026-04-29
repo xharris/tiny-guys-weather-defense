@@ -4,6 +4,7 @@ class_name Ability
 @export var name: String
 @export var scenes: Array[PackedScene]
 @export var repeat: int = 0
+@export_range(0.0, 1.0, 0.1) var cooldown: float = 1.0
 
 ## Can return Node2D that will be added to the Entities node
 func use(ctx: AbilityContext) -> Array[Node2D]:
