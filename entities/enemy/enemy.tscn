@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://cf03gn18jq10f"]
+
+[ext_resource type="Script" uid="uid://wuvmy86y65y2" path="res://entities/enemy/enemy.gd" id="1_ksmh7"]
+[ext_resource type="PackedScene" uid="uid://dpn4csnukww6w" path="res://components/enemy_sprite/enemy_sprite.tscn" id="2_im2q6"]
+[ext_resource type="PackedScene" uid="uid://c3w0pmm7l0asa" path="res://components/state_machine/state_machine.tscn" id="3_3fvr7"]
+
+[node name="Enemy" type="CharacterBody2D" unique_id=1221818744]
+motion_mode = 1
+script = ExtResource("1_ksmh7")
+
+[node name="EnemySprite" parent="." unique_id=100549976 instance=ExtResource("2_im2q6")]
+unique_name_in_owner = true
+
+[node name="StateMachine" parent="." unique_id=1767894804 node_paths=PackedStringArray("character") instance=ExtResource("3_3fvr7")]
+unique_name_in_owner = true
+character = NodePath("")

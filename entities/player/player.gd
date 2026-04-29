@@ -16,16 +16,19 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
     var anchor = self
-    if base:
+    var radius: float = 80
+    if base is Base:
         anchor = base
-    var aim_dir = orbit_aim.get_aim_dir(anchor.global_position)
+        radius = base.get_radius()
+    var aim_dir = orbit_aim.get_aim_dir(global_position)
 
     ability_ctrl.aim_position = orbit_aim.aim_position
     ability_ctrl.aim_dir = aim_dir
     ability_ctrl.spawn_position = sprite.wand_tip.global_position
     sprite.aim_dir = aim_dir
+    sprite.aim_position = orbit_aim.aim_position
     if anchor != self:
-        global_position = orbit_aim.get_orbit_position(anchor)
+        global_position = orbit_aim.get_orbit_position(anchor, radius)
 
 func _unhandled_input(event: InputEvent) -> void:
     if event.is_action_pressed("primary"):

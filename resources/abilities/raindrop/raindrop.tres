@@ -7,6 +7,8 @@
 [resource]
 script = ExtResource("1_hvl04")
 sprite = ExtResource("2_ifail")
+sprite_color = Color(0.011764706, 0.6627451, 0.95686275, 1)
+slant = 50.0
 trail = ExtResource("3_f0cg8")
 name = "raindrop"
 metadata/_custom_type_script = "uid://81aytbj1kgv4"

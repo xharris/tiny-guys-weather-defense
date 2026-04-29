@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="StateMoveToward" format=3 uid="uid://ddnodgc0mfxma"]
+
+[ext_resource type="Script" uid="uid://bxu7t1six50cc" path="res://entities/enemy/enemy_states/move_toward.gd" id="2_aji6o"]
+
+[resource]
+script = ExtResource("2_aji6o")
+max_duration = 1.0
+max_duration_state_path = "uid://bhi0qvduwbs3v"
+metadata/_custom_type_script = "uid://bxu7t1six50cc"

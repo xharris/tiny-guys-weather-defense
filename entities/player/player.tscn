@@ -13,6 +13,7 @@ script = ExtResource("1_sglur")
 unique_name_in_owner = true
 z_index = -10
 z_as_relative = false
+aim_position_lerp = 1.0
 size = 1.0
 
 [node name="AbilityController" parent="." unique_id=62650995 instance=ExtResource("4_bls4j")]
@@ -21,3 +22,4 @@ abilities = Array[ExtResource("5_fkugw")]([])
 
 [node name="PlayerSprite" parent="." unique_id=589942968 instance=ExtResource("1_symyc")]
 unique_name_in_owner = true
+position = Vector2(0, -10)

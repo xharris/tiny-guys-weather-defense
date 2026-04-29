@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://c4mrn0662oesy"]
+
+[ext_resource type="Script" uid="uid://bfp0d6eu3wtfb" path="res://entities/enemy_factory/enemy_factory.gd" id="1_7qmcr"]
+
+[node name="EnemyFactory" type="Node2D" unique_id=2102475208]
+script = ExtResource("1_7qmcr")
+
+[node name="Spawn" type="Timer" parent="." unique_id=470993635]
+unique_name_in_owner = true
+autostart = true

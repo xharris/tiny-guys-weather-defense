@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="StateIdle" format=3 uid="uid://bhi0qvduwbs3v"]
+
+[ext_resource type="Script" uid="uid://c2x3ljs70aouq" path="res://entities/enemy/enemy_states/idle.gd" id="1_gbswl"]
+
+[resource]
+script = ExtResource("1_gbswl")
+max_duration = 1.0
+max_duration_state_path = "uid://ddnodgc0mfxma"
+metadata/_custom_type_script = "uid://c2x3ljs70aouq"

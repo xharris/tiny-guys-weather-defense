@@ -15,6 +15,7 @@ static var FALL_SPEED_CURVE = preload("res://resources/curves/fall_from_top_spee
 var config: AbilityDrop
 var ctx: AbilityContext
 
+var slant: float = 0
 var start_position: Vector2
 var target_position: Vector2
 var _t: float = 0
@@ -28,7 +29,7 @@ func _ready() -> void:
     hitbox.disabled = true
     # place above top of view
     var screen_top_world = get_canvas_transform().affine_inverse() * Vector2.ZERO
-    start_position = Vector2(ctx.ctrl.aim_position.x, screen_top_world.y)
+    start_position = Vector2(ctx.ctrl.aim_position.x + slant + config.slant, screen_top_world.y)
     target_position = ctx.ctrl.aim_position
     global_position = start_position
     _dev.dump("mouse {2}, start {0}, target {1}", [start_position, target_position, get_global_mouse_position()])
@@ -40,7 +41,8 @@ func _on_remove_timer():
         parent.remove_child(self)
 
 func _process(delta: float) -> void:
-    trail.config = config.trail 
+    trail.config = config.trail
+    sprite.modulate = config.sprite_color
     
     var progress = clampf(_t / 2.0, 0, 1)
     if progress >= 1.0 and vfx.visible:

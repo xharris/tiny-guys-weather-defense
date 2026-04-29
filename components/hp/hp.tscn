@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://hgobe6jntfw6"]
+
+[ext_resource type="Script" uid="uid://844d035mv10w" path="res://components/hp/hp.gd" id="1_vjjcq"]
+
+[node name="Hp" type="Node2D" unique_id=1543573155]
+script = ExtResource("1_vjjcq")

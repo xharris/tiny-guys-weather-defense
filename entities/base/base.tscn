@@ -1,7 +1,16 @@
 [gd_scene format=3 uid="uid://bwbmv4jddck8m"]
 
 [ext_resource type="PackedScene" uid="uid://bp61l4mjhw2r" path="res://components/base_sprite/base_sprite.tscn" id="1_3i11b"]
+[ext_resource type="Script" uid="uid://gnulgf0krh4m" path="res://entities/base/base.gd" id="1_qyh2h"]
+[ext_resource type="PackedScene" uid="uid://hgobe6jntfw6" path="res://components/hp/hp.tscn" id="3_6xdyk"]
 
 [node name="Base" type="Node2D" unique_id=1595243073]
+script = ExtResource("1_qyh2h")
 
 [node name="BaseSprite" parent="." unique_id=1334906754 instance=ExtResource("1_3i11b")]
+unique_name_in_owner = true
+position = Vector2(0, 2)
+
+[node name="Hp" parent="." unique_id=1543573155 instance=ExtResource("3_6xdyk")]
+unique_name_in_owner = true
+max = 10

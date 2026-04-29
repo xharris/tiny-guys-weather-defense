@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="BaseConfig" format=3 uid="uid://h51ijtaoeb3p"]
+
+[ext_resource type="Script" uid="uid://tcqmfhnchexm" path="res://entities/base/base_config.gd" id="1_t8ne5"]
+[ext_resource type="Texture2D" uid="uid://c11hinjqab428" path="res://resources/base_configs/cube.png" id="2_woms0"]
+
+[resource]
+script = ExtResource("1_t8ne5")
+sprite = ExtResource("2_woms0")
+radius = 8.0
+metadata/_custom_type_script = "uid://tcqmfhnchexm"

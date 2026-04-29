@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bp61l4mjhw2r"]
 
 [ext_resource type="Script" uid="uid://byqqnd4urmw8l" path="res://components/base_sprite/base_sprite.gd" id="1_kqoqr"]
-[ext_resource type="Texture2D" uid="uid://c11hinjqab428" path="res://components/base_sprite/cube.png" id="2_6xq7c"]
+[ext_resource type="Texture2D" uid="uid://c11hinjqab428" path="res://resources/base_configs/cube.png" id="2_6xq7c"]
 
 [node name="BaseSprite" type="Node2D" unique_id=1334906754]
 script = ExtResource("1_kqoqr")
@@ -10,5 +10,6 @@ script = ExtResource("1_kqoqr")
 unique_name_in_owner = true
 
 [node name="Sprite2D" type="Sprite2D" parent="BaseHealth" unique_id=523125910]
+unique_name_in_owner = true
 position = Vector2(0, -5)
 texture = ExtResource("2_6xq7c")
