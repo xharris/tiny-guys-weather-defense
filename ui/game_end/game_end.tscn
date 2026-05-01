@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://c1x3ivhswsqwx"]
 
 [ext_resource type="Script" uid="uid://bnfcynrhuppaw" path="res://ui/game_end/game_end.gd" id="1_fp7mn"]
+[ext_resource type="PackedScene" uid="uid://bmp1k735rs1me" path="res://ui/play_container/play_container.tscn" id="2_aycka"]
 [ext_resource type="FontVariation" uid="uid://c8v0tabha80da" path="res://resources/fonts/title.tres" id="2_gdgjf"]
 
 [node name="GameEnd" type="Control" unique_id=2101390903]
@@ -12,18 +13,23 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_fp7mn")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1926075203]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="PlayContainer" parent="." unique_id=493932922 instance=ExtResource("2_aycka")]
+layout_mode = 0
+anchors_preset = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PlayContainer" unique_id=1926075203]
+layout_mode = 2
+theme_override_constants/separation = 0
 alignment = 1
 
-[node name="WinLabel" type="Label" parent="VBoxContainer" unique_id=363040465]
+[node name="WinLabel" type="Label" parent="PlayContainer/VBoxContainer" unique_id=363040465]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_gdgjf")
 theme_override_font_sizes/font_size = 48
 text = "You Win"
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="PlayContainer/VBoxContainer" unique_id=1724641671]
+layout_mode = 2
+text = "Thanks for playing!"
 horizontal_alignment = 1

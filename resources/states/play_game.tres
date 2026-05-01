@@ -6,12 +6,16 @@
 [ext_resource type="Script" uid="uid://fo6godl37e1o" path="res://entities/states/play_game.gd" id="3_u7x3f"]
 [ext_resource type="Script" uid="uid://os24csw4nytu" path="res://entities/enemy_factory/wave.gd" id="4_4nibv"]
 [ext_resource type="Resource" uid="uid://cs1u8e4ohho2d" path="res://resources/waves/single_fly.tres" id="5_u7x3f"]
+[ext_resource type="Resource" uid="uid://f8aos1h45fcc" path="res://resources/waves/ants.tres" id="6_4nibv"]
 [ext_resource type="Resource" uid="uid://yyk5iiscjwko" path="res://resources/waves/many_flies.tres" id="7_3yxc8"]
+[ext_resource type="Resource" uid="uid://bif2jtgi1sm4i" path="res://resources/waves/ants_and_fly.tres" id="9_mali3"]
 
 [resource]
 script = ExtResource("3_u7x3f")
 on_no_wave_picked = ExtResource("1_1nhmh")
 on_game_over = ExtResource("1_15pnf")
+on_win = ExtResource("1_1nhmh")
 on_pick_ability = ExtResource("3_4nibv")
-waves = Array[ExtResource("4_4nibv")]([ExtResource("7_3yxc8"), ExtResource("5_u7x3f")])
+waves = Array[ExtResource("4_4nibv")]([ExtResource("7_3yxc8"), ExtResource("6_4nibv"), ExtResource("5_u7x3f"), ExtResource("9_mali3")])
+waves_until_pick_ability = 1
 metadata/_custom_type_script = "uid://fo6godl37e1o"

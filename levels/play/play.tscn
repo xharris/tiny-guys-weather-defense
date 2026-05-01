@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://qn751olbucor" path="res://levels/play/play.gd" id="1_svcyk"]
 [ext_resource type="PackedScene" uid="uid://b0xnjbp1lo42f" path="res://entities/tree/tree.tscn" id="2_bavt8"]
+[ext_resource type="PackedScene" uid="uid://cjqtjrm6yl1c5" path="res://components/cloud_sprite/cloud_sprite.tscn" id="2_f2ucs"]
 [ext_resource type="PackedScene" uid="uid://c4mrn0662oesy" path="res://entities/enemy_factory/enemy_factory.tscn" id="2_kiob8"]
 [ext_resource type="PackedScene" uid="uid://bwbmv4jddck8m" path="res://entities/base/base.tscn" id="2_tpncu"]
 [ext_resource type="PackedScene" uid="uid://b4v2slhf7k5g8" path="res://entities/player/player.tscn" id="3_avta7"]
@@ -36,6 +37,14 @@ texture = SubResource("GradientTexture2D_f2ucs")
 unique_name_in_owner = true
 layer = 10
 follow_viewport_enabled = true
+
+[node name="CloudSprite" parent="." unique_id=424814157 instance=ExtResource("2_f2ucs")]
+position = Vector2(48, 120)
+scale = Vector2(6, 6)
+
+[node name="CloudSprite2" parent="." unique_id=2106021681 instance=ExtResource("2_f2ucs")]
+position = Vector2(-120, -24)
+scale = Vector2(6, 6)
 
 [node name="Entities" type="Node2D" parent="." unique_id=274861770]
 unique_name_in_owner = true

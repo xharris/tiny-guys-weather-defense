@@ -9,5 +9,8 @@ static var HEALTH_SCALE = preload("res://resources/curves/base_sprite_health_sca
 ## [0,1]
 var health: float = 1.0
 
+func get_hp_scale() -> Vector2:
+    return Vector2.ONE * HEALTH_SCALE.sample(health)
+
 func _process(delta: float) -> void:
-    base_health.scale = Vector2.ONE * HEALTH_SCALE.sample(health)
+    base_health.scale = get_hp_scale()

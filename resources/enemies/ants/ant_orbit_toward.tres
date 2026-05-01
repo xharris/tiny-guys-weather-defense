@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="StateOrbitToward" format=3 uid="uid://bwttxwv06t6br"]
+
+[ext_resource type="AudioStream" uid="uid://0uataoisotxs" path="res://resources/enemies/ants/kakaist-marching-site-sfx-377667.mp3" id="1_er880"]
+[ext_resource type="Script" uid="uid://cyjq3r5udn4rh" path="res://entities/enemy/enemy_states/orbit_toward.gd" id="1_wgijf"]
+
+[resource]
+script = ExtResource("1_wgijf")
+audio = ExtResource("1_er880")
+volume_db = -15.0
+metadata/_custom_type_script = "uid://cyjq3r5udn4rh"

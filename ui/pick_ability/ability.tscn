@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bauodmum4orw5" path="res://ui/pick_ability/ability.gd" id="1_cnbdl"]
 [ext_resource type="Texture2D" uid="uid://cppkmhdchira1" path="res://ui/pick_ability/ninepatch.png" id="2_f8a2h"]
+[ext_resource type="AudioStream" uid="uid://bxolcp3x8k01w" path="res://ui/pick_ability/u_vrs223ln83-loud-thunder-439064.mp3" id="3_bqohe"]
 
 [node name="Ability" type="Button" unique_id=605119604]
 custom_minimum_size = Vector2(160, 128)
@@ -61,3 +62,8 @@ theme_override_font_sizes/font_size = 12
 text = "Instantly nuke all enemies on the screen"
 horizontal_alignment = 1
 autowrap_mode = 3
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1492415412]
+unique_name_in_owner = true
+stream = ExtResource("3_bqohe")
+volume_db = -15.0

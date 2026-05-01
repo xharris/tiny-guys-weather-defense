@@ -1,10 +1,19 @@
 [gd_scene format=3 uid="uid://dpn4csnukww6w"]
 
 [ext_resource type="Script" uid="uid://bofnytl7a8m6j" path="res://components/enemy_sprite/enemy_sprite.gd" id="1_gancb"]
+[ext_resource type="SpriteFrames" uid="uid://b7vlc0lrripin" path="res://resources/enemies/ants/ant_sprite.tres" id="2_yop6h"]
 
 [node name="EnemySprite" type="Node2D" unique_id=100549976]
 script = ExtResource("1_gancb")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1862460369]
+[node name="FaceDirection" type="Node2D" parent="." unique_id=1064999513]
 unique_name_in_owner = true
-scale = Vector2(2, 2)
+
+[node name="Sprite2D" type="Sprite2D" parent="FaceDirection" unique_id=1862460369]
+unique_name_in_owner = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="FaceDirection" unique_id=2039557110]
+unique_name_in_owner = true
+sprite_frames = ExtResource("2_yop6h")
+animation = &"idle"
+speed_scale = 3.0

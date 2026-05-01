@@ -11,6 +11,7 @@ static func get_closest(to: Node2D) -> Base:
 @onready var hitbox: Hitbox = %Hitbox
 @onready var vfx: Vfx = %Vfx
 @onready var audio_player: AudioStreamPlayer2D = %AudioStreamPlayer2D
+@onready var shadow: Shadow = %Shadow
 
 @export var config: BaseConfig
 
@@ -36,6 +37,7 @@ func _on_apply_on_hit(_source: Hitbox, on_hit: OnHitEffect):
     on_hit.apply_hp(hp)
 
 func _process(delta: float) -> void:
+    shadow.size = sprite.get_hp_scale().length() * 20
     sprite.health = hp.current / HP.sample(1.0)
     if config:
         sprite.sprite.texture = config.sprite

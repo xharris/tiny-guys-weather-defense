@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Wave" format=3 uid="uid://f8aos1h45fcc"]
+
+[ext_resource type="Script" uid="uid://tt4rv2874odu" path="res://entities/enemy/enemy_config.gd" id="1_onnwm"]
+[ext_resource type="Script" uid="uid://os24csw4nytu" path="res://entities/enemy_factory/wave.gd" id="2_2g3m1"]
+[ext_resource type="Resource" uid="uid://fwkagsougoqs" path="res://resources/enemies/ants/ant.tres" id="2_61khx"]
+
+[resource]
+script = ExtResource("2_2g3m1")
+name = "Ant Crowd"
+enemy_pool = Array[ExtResource("1_onnwm")]([ExtResource("2_61khx")])
+enemy_spawn_limit = 0.8
+metadata/_custom_type_script = "uid://os24csw4nytu"

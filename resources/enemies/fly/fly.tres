@@ -5,14 +5,16 @@
 [ext_resource type="Resource" uid="uid://yr5ohuw52dy3" path="res://resources/enemies/enemy_hitbox.tres" id="1_ijusw"]
 [ext_resource type="Resource" uid="uid://ddnodgc0mfxma" path="res://resources/enemies/fly/fly_move.tres" id="1_q18pk"]
 [ext_resource type="Resource" uid="uid://cpkddwttp2bn3" path="res://resources/on_hit_effects/enemy_deal_low_damage.tres" id="2_has0f"]
-[ext_resource type="Texture2D" uid="uid://bv1t88mfgydri" path="res://resources/enemies/fly/fly.png" id="2_q18pk"]
 [ext_resource type="Resource" uid="uid://brq3ia3f0qkhi" path="res://resources/on_hit_effects/kill_self.tres" id="3_has0f"]
+[ext_resource type="SpriteFrames" uid="uid://beafita3ol4ra" path="res://resources/enemies/fly/fly_frames.tres" id="7_ijusw"]
 
 [resource]
 script = ExtResource("1_4houe")
 name = "Fly"
-sprite = ExtResource("2_q18pk")
+sprite_frames = ExtResource("7_ijusw")
+size = 0.5
 initial_state = ExtResource("1_q18pk")
+hp = 0.5
 hitbox = ExtResource("1_ijusw")
 hitbox_on_hit_effects = Array[ExtResource("1_4tw1f")]([ExtResource("2_has0f"), ExtResource("3_has0f")])
 shadow_offset = Vector2(0, 16)

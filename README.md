@@ -37,6 +37,12 @@
     - [ ] spider
 - [ ] add surrounding trees
 
+## DONE
+
+- [x] ant
+    - [x] orbit around base
+- [ ] ability: repeat ability use on nearby target
+
 ## Inspiration
 
 ![Rain](https://imgur.com/let-rain-oc-mrICIdC)

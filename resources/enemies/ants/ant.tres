@@ -1,9 +1,18 @@
 [gd_resource type="Resource" script_class="EnemyConfig" format=3 uid="uid://fwkagsougoqs"]
 
+[ext_resource type="Resource" uid="uid://yr5ohuw52dy3" path="res://resources/enemies/enemy_hitbox.tres" id="1_7ndto"]
 [ext_resource type="Script" uid="uid://rauoa0p62aej" path="res://components/hitbox/on_hit_effect.gd" id="1_fsjjl"]
+[ext_resource type="Resource" uid="uid://bwttxwv06t6br" path="res://resources/enemies/ants/ant_orbit_toward.tres" id="2_hhkiw"]
 [ext_resource type="Script" uid="uid://tt4rv2874odu" path="res://entities/enemy/enemy_config.gd" id="2_ti3x6"]
+[ext_resource type="Resource" uid="uid://cpkddwttp2bn3" path="res://resources/on_hit_effects/enemy_deal_low_damage.tres" id="3_dnwpf"]
+[ext_resource type="SpriteFrames" uid="uid://b7vlc0lrripin" path="res://resources/enemies/ants/ant_sprite.tres" id="6_dnwpf"]
 
 [resource]
 script = ExtResource("2_ti3x6")
 name = "Ant"
+sprite_frames = ExtResource("6_dnwpf")
+initial_state = ExtResource("2_hhkiw")
+hitbox = ExtResource("1_7ndto")
+hitbox_on_hit_effects = Array[ExtResource("1_fsjjl")]([ExtResource("3_dnwpf")])
+shadow_offset = Vector2(4, 13)
 metadata/_custom_type_script = "uid://tt4rv2874odu"

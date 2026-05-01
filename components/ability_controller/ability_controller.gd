@@ -3,13 +3,22 @@ class_name AbilityController
 
 static var COOLDOWN = preload("res://resources/curves/ability_cooldown.tres")
 
-var _dev = Dev.new()
+var _dev = Dev.new(true)
 
 @export var abilities: Array[Ability] = []
-
-var crit_chance: float = 0.0:
+@export var crit_chance: float = 0.0:
     set(v):
         crit_chance = clampf(v, 0, 1)
+        if _initial_crit_chance < 0:
+            _initial_crit_chance = crit_chance
+@export_range(0, 1, 0.1) var cooldown_reduction: float = 0.0:
+    set(v):
+        cooldown_reduction = clampf(v, 0, 1)
+        if _initial_cooldown_reduction < 0:
+            _initial_cooldown_reduction = cooldown_reduction
+        
+var _initial_cooldown_reduction: float = -1
+var _initial_crit_chance: float = -1
 var aim_position: Vector2
 var aim_dir: Vector2
 var spawn_position: Vector2
@@ -27,7 +36,8 @@ func use():
     var calc_stats: Array[Ability] = abilities.filter(func(a: Ability): return a.step == Ability.Step.CALC_STATS)
     
     # reset stats
-    crit_chance = 0.0
+    crit_chance = _initial_crit_chance
+    cooldown_reduction = _initial_cooldown_reduction
     
     # modify stats
     for a in calc_stats:
@@ -52,7 +62,7 @@ func use():
         if not is_critical and a.only_crit:
             _dev.dump("{0} can only crit", [a.name])
             continue
-        _cooldown.set(a.name, COOLDOWN.sample(a.cooldown))
+        _cooldown.set(a.name, COOLDOWN.sample(a.cooldown * (1 - cooldown_reduction)))
         _dev.dump("active {0}", [a.name])
         for i in max(1, a.repeat):
             var ctx = get_context()

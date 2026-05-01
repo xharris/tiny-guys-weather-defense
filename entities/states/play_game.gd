@@ -1,15 +1,26 @@
 extends State
 class_name StatePlayGame
 
-var _dev = Dev.new(true)
+var _dev = Dev.new()
 
 @export var on_no_wave_picked: State
 @export var on_game_over: State
+@export var on_win: State
 @export var on_pick_ability: State
 @export var waves: Array[Wave]
 @export var max_waves: int = 10
 @export var waves_until_pick_ability: int = 3
 
+func _win_game(me: StateMachine):
+    # TODO should this go in _exit?
+    # stop all factories
+    for f: EnemyFactory in me.get_tree().get_nodes_in_group(Groups.enemy_factory):
+        f.disabled = true
+    # remove all enemies
+    for e: Enemy in me.get_tree().get_nodes_in_group(Groups.enemy):
+        e.hp.take_damage(e.hp.current)
+    me.switch(on_win)
+        
 func _pick_wave(me: StateMachine):
     if me.current != self:
         return
@@ -17,6 +28,8 @@ func _pick_wave(me: StateMachine):
     var owner: Play = me.owner
     if not owner:
         return
+        
+    # still have enemies to clean up
     var enemy_count = me.get_tree()\
         .get_nodes_in_group(Groups.enemy)\
         .filter(func (e: Enemy): return e.hp.is_alive())\
@@ -26,9 +39,15 @@ func _pick_wave(me: StateMachine):
 
     var metadata = Metadata.get_data(me)
 
+    # game win
+    if metadata.wave_count >= max_waves:
+        _win_game(me)
+        return
+
     # time to pick abilities
     if metadata.waves_until_pick_ability <= 0:
         _dev.dump("time to pick a new ability")
+        metadata.waves_until_pick_ability = waves_until_pick_ability
         me.switch(on_pick_ability)
         return
 
@@ -81,7 +100,6 @@ func _enter(me: StateMachine):
     if not owner:
         return
     var metadata = Metadata.get_data(me)
-    metadata.waves_until_pick_ability = waves_until_pick_ability
     owner.enemy_factory.wave_finished.connect(_pick_wave.bind(me), CONNECT_DEFERRED)
     owner.enemy_factory.spawned.connect(_on_enemy_spawned.bind(me), CONNECT_DEFERRED)
     owner.base.hp.died.connect(_on_base_died.bind(me))
@@ -95,4 +113,4 @@ func _unhandled_input(me: StateMachine, event: InputEvent) -> void:
     # for testing purposes
     var owner: Play = me.owner
     if owner and event.is_action_pressed("debug_primary"):
-        owner.base.hp.take_damage(owner.base.hp.current)
+        _win_game(me)

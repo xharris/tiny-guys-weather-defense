@@ -60,12 +60,12 @@ func _ready() -> void:
             Vector2.ZERO, Color.WHITE, Color.WHITE, 0)
     
     cloud_sprite.config = config.cloud
+    cloud_sprite.dismiss()
         
 func _on_hitbox_timeout():
     _dev.dump("disable hitbox")
     hitbox.disabled = true
     NodeUtil.move_up_in_tree(cloud_sprite)
-    cloud_sprite.dismiss()
 
 func _process(delta: float) -> void:
     if _fade > 0:

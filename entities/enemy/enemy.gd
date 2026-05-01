@@ -42,6 +42,10 @@ func _process(delta: float) -> void:
     shadow.position = config.shadow_offset
     state.character = self
     if config:
-        sprite.sprite.texture = config.sprite
+        if config.sprite:
+            sprite.use_sprite(config.sprite)
+        elif config.sprite_frames:
+            sprite.use_sprite_frames(config.sprite_frames)
+        vfx.scale = Vector2.ONE * lerp(1.5, 2.5, config.size)
         hitbox.on_hit_effects = config.hitbox_on_hit_effects
         hitbox.config = config.hitbox

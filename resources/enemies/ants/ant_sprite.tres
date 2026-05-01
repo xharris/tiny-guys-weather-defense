@@ -1,0 +1,37 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://b7vlc0lrripin"]
+
+[ext_resource type="Texture2D" uid="uid://c1bxed0us7tob" path="res://resources/enemies/ants/ant.png" id="1_hof7o"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hof7o"]
+atlas = ExtResource("1_hof7o")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_561of"]
+atlas = ExtResource("1_hof7o")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2vt60"]
+atlas = ExtResource("1_hof7o")
+region = Rect2(32, 0, 32, 32)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hof7o")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_561of")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2vt60")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]

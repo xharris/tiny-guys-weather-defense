@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://veofgcxffx81" path="res://components/vfx/vfx.tscn" id="2_0e5r6"]
 [ext_resource type="PackedScene" uid="uid://rsij4bxwpmrc" path="res://components/hitbox/hitbox.tscn" id="3_0e5r6"]
 [ext_resource type="PackedScene" uid="uid://hgobe6jntfw6" path="res://components/hp/hp.tscn" id="3_6xdyk"]
+[ext_resource type="PackedScene" uid="uid://bkfwwx5v63cyq" path="res://components/shadow/shadow.tscn" id="4_6ljr3"]
 [ext_resource type="AudioStream" uid="uid://jfr0dku6pman" path="res://resources/abilities/raindrop/universfield-classic-punch-impact-352711.mp3" id="6_warcs"]
 
 [node name="Base" type="Node2D" unique_id=1595243073]
@@ -14,6 +15,10 @@ script = ExtResource("1_qyh2h")
 unique_name_in_owner = true
 
 [node name="BaseSprite" parent="Vfx" unique_id=1334906754 instance=ExtResource("1_3i11b")]
+unique_name_in_owner = true
+position = Vector2(0, 2)
+
+[node name="Shadow" parent="Vfx" unique_id=563252791 instance=ExtResource("4_6ljr3")]
 unique_name_in_owner = true
 position = Vector2(0, 2)
 

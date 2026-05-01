@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="CanPickCmpAbilityCount" format=3 uid="uid://dqce8sia86ro8"]
+
+[ext_resource type="Script" uid="uid://cd1uj5x8t7y2t" path="res://components/ability_controller/ability_can_picks/cmp_ability_count.gd" id="1_aemjl"]
+
+[resource]
+script = ExtResource("1_aemjl")
+cmp = 2
+filter_not_only_crit = true
+metadata/_custom_type_script = "uid://cd1uj5x8t7y2t"

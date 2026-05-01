@@ -8,5 +8,5 @@ static var COLORS: Array[Color] = [Color.html("#2E7D32"), Color.html("#1B5E20")]
 
 func _ready() -> void:
     var frame_count = sprite.hframes * sprite.vframes
-    sprite.frame = int(randi() * frame_count)
+    sprite.frame = randi() % frame_count
     sprite.modulate = COLORS.pick_random()

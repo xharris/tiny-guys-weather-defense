@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="AbilityModifyCooldown" format=3 uid="uid://df8wit0gbga5d"]
+
+[ext_resource type="Script" uid="uid://46y1q2gys7mw" path="res://components/ability_controller/ability_can_pick.gd" id="1_wncbd"]
+[ext_resource type="Script" uid="uid://bi757mus06dcu" path="res://entities/abilities/modify_cd.gd" id="2_6g8rl"]
+[ext_resource type="Resource" uid="uid://qvr1h6wanelf" path="res://resources/ability_can_picks/has_active_ability.tres" id="2_aq7sr"]
+
+[resource]
+script = ExtResource("2_6g8rl")
+value = 0.1
+name = "Variable Conditions"
+description = "Use abilities more often"
+weight = 0.7
+step = 1
+can_pick = Array[ExtResource("1_wncbd")]([ExtResource("2_aq7sr")])
+metadata/_custom_type_script = "uid://bi757mus06dcu"

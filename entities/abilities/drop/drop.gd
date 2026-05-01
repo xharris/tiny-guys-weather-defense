@@ -72,7 +72,10 @@ func _process(delta: float) -> void:
     hitbox.config = config.hitbox
     #particles.emitting = false
     
-    var progress = clampf(_t / 2.0, 0, 1)
+    var duration = 2.0
+    if ctx.is_critical:
+        duration = 0.8
+    var progress = clampf(_t / duration, 0, 1)
     if progress >= 1.0 and not _landed:
         _landed = true
 
@@ -94,4 +97,5 @@ func _process(delta: float) -> void:
         # fall to ground
         _t += delta * 0.06 * FALL_SPEED_CURVE.sample(config.fall_speed)
         _dev.dump("t {0}, progress {1}", [_t, progress])
-        global_position = lerp(start_position, target_position, progress)
+        
+    global_position = lerp(start_position, target_position, progress)

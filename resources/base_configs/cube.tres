@@ -2,11 +2,11 @@
 
 [ext_resource type="Resource" uid="uid://oetas313y6rx" path="res://resources/base_configs/cube_hitbox.tres" id="1_c1gwt"]
 [ext_resource type="Script" uid="uid://tcqmfhnchexm" path="res://entities/base/base_config.gd" id="1_t8ne5"]
-[ext_resource type="Texture2D" uid="uid://c11hinjqab428" path="res://resources/base_configs/cube.png" id="2_woms0"]
+[ext_resource type="Texture2D" uid="uid://sgfalf3f6xco" path="res://resources/base_configs/sugar_cube.png" id="3_c1gwt"]
 
 [resource]
 script = ExtResource("1_t8ne5")
-sprite = ExtResource("2_woms0")
-orbit_radius = 8.0
+sprite = ExtResource("3_c1gwt")
+orbit_radius = 12.0
 hitbox = ExtResource("1_c1gwt")
 metadata/_custom_type_script = "uid://tcqmfhnchexm"
