@@ -9,6 +9,7 @@ class_name AbilityDrop
 @export var on_hit_effects: Array[OnHitEffect]
 @export var remove_wait_time: float = 0.1
 @export var hitbox: HitboxConfig
+@export var cloud: CloudSpriteConfig
 
 @export var land_audio: AudioStream
 @export var on_hit_audio: AudioStream

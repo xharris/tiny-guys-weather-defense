@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="AbilityModifyCrit" format=3 uid="uid://ddyy5vy43x3ku"]
+
+[ext_resource type="Script" uid="uid://cc3f5cusy5j1g" path="res://entities/abilities/modify_crit.gd" id="1_ocbst"]
+[ext_resource type="Script" uid="uid://46y1q2gys7mw" path="res://components/ability_controller/ability_can_pick.gd" id="1_pa8x2"]
+[ext_resource type="Resource" uid="uid://qvr1h6wanelf" path="res://resources/ability_can_picks/has_active_ability.tres" id="2_p1pqv"]
+
+[resource]
+script = ExtResource("1_ocbst")
+value = 0.5
+name = "Heavy Weather"
+description = "Increase critical strike chance SIGNIFICANTLY"
+weight = 0.1
+can_pick = Array[ExtResource("1_pa8x2")]([ExtResource("2_p1pqv")])
+metadata/_custom_type_script = "uid://cc3f5cusy5j1g"

@@ -1,30 +1,19 @@
 extends State
 class_name StatePlayGame
 
-var _dev = Dev.new()
+var _dev = Dev.new(true)
 
 @export var on_no_wave_picked: State
 @export var on_game_over: State
 @export var on_pick_ability: State
 @export var waves: Array[Wave]
 @export var max_waves: int = 10
+@export var waves_until_pick_ability: int = 3
 
 func _pick_wave(me: StateMachine):
-    var metadata = Metadata.get_data(me)
-    
-    # time to pick abilities
-    if metadata.waves_until_pick_ability <= 0:
-        me.switch(on_pick_ability)
+    if me.current != self:
         return
-    
-    # pick next wave
-    _dev.dump("pick wave")
-    var lowest_difficulty = waves.reduce(func(prev: float, curr: Wave):
-        var difficulty = curr.get_difficulty()
-        return difficulty if difficulty <= prev else prev, 1.0)
-    var difficulty: float = clampf(float(metadata.wave_count) / max_waves, lowest_difficulty, 1)
-    metadata.difficulty = difficulty
-    
+
     var owner: Play = me.owner
     if not owner:
         return
@@ -35,6 +24,23 @@ func _pick_wave(me: StateMachine):
     if enemy_count > 0:
         return
 
+    var metadata = Metadata.get_data(me)
+
+    # time to pick abilities
+    if metadata.waves_until_pick_ability <= 0:
+        _dev.dump("time to pick a new ability")
+        me.switch(on_pick_ability)
+        return
+
+    # pick next wave
+    var lowest_difficulty = waves.reduce(func(prev: float, curr: Wave):
+        # matches difficulty
+        var difficulty = curr.get_difficulty()
+        return difficulty if difficulty <= prev else prev, 1.0)
+    var difficulty: float = clampf(float(metadata.wave_count) / max_waves, lowest_difficulty, 1)
+    metadata.difficulty = difficulty
+
+    _dev.dump("pick wave, difficulty={0}", [difficulty])
     var picked = true
     var possible_waves = waves.filter(func(w: Wave): return w.get_difficulty() <= difficulty)
 
@@ -49,7 +55,17 @@ func _pick_wave(me: StateMachine):
         owner.enemy_factory.wave = next_wave
         metadata.wave_count += 1
         metadata.waves_until_pick_ability -= 1
-        _dev.dump("pick wave #{0} {1}", [metadata.wave_count, owner.enemy_factory.wave.resource_path.get_file()])
+        _dev.dump("pick wave #{0} ({1} left) {2}", [metadata.wave_count, metadata.waves_until_pick_ability, owner.enemy_factory.wave.resource_path.get_file()])
+
+func _on_base_died(me: StateMachine):
+    _dev.dump("base died → game over")
+    # stop all factories
+    for f: EnemyFactory in me.get_tree().get_nodes_in_group(Groups.enemy_factory):
+        f.disabled = true
+    # remove all enemies
+    for e: Enemy in me.get_tree().get_nodes_in_group(Groups.enemy):
+        e.hp.take_damage(e.hp.current)
+    me.switch(on_game_over)
 
 func _exit(me: StateMachine):
     var owner: Play = me.owner
@@ -58,14 +74,17 @@ func _exit(me: StateMachine):
     owner.enemy_factory.disabled = true
     owner.enemy_factory.wave_finished.disconnect(_pick_wave.bind(me))
     owner.enemy_factory.spawned.disconnect(_on_enemy_spawned.bind(me))
+    owner.base.hp.died.disconnect(_on_base_died.bind(me))
 
 func _enter(me: StateMachine):
     var owner: Play = me.owner
     if not owner:
         return
+    var metadata = Metadata.get_data(me)
+    metadata.waves_until_pick_ability = waves_until_pick_ability
     owner.enemy_factory.wave_finished.connect(_pick_wave.bind(me), CONNECT_DEFERRED)
     owner.enemy_factory.spawned.connect(_on_enemy_spawned.bind(me), CONNECT_DEFERRED)
-    owner.base.hp.died.connect(me.switch.bind(on_game_over), CONNECT_ONE_SHOT)
+    owner.base.hp.died.connect(_on_base_died.bind(me))
     owner.enemy_factory.disabled = false
     _pick_wave(me)
 

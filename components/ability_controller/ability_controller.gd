@@ -22,8 +22,23 @@ func get_context() -> AbilityContext:
 
 func use():
     var entities = get_tree().get_first_node_in_group(Groups.entities)
+    
+    var actives: Array[Ability] = abilities.filter(func(a: Ability): return a.step == Ability.Step.ACTIVE)
+    var calc_stats: Array[Ability] = abilities.filter(func(a: Ability): return a.step == Ability.Step.CALC_STATS)
+    
+    # reset stats
+    crit_chance = 0.0
+    
+    # modify stats
+    for a in calc_stats:
+        _dev.dump("calc stats {0}", [a.name])
+        a.use(get_context())
     var is_critical = randf() <= crit_chance
-    for a in abilities:
+        
+    _dev.dump("stats: crit_chance={0}, is_critical={1}", [crit_chance, is_critical])
+    
+    # use actives
+    for a in actives:
         var cd = _cooldown.get(a.name, 0.0)
         # is off cooldown?
         if cd > 0:
@@ -38,7 +53,7 @@ func use():
             _dev.dump("{0} can only crit", [a.name])
             continue
         _cooldown.set(a.name, COOLDOWN.sample(a.cooldown))
-        _dev.dump("use {0}", [a.name])
+        _dev.dump("active {0}", [a.name])
         for i in max(1, a.repeat):
             var ctx = get_context()
             ctx.is_critical = is_critical

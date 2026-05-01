@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="OnHitDealDamage" format=3 uid="uid://dmp6cntl88sm8"]
+
+[ext_resource type="Script" uid="uid://bf1g37y7f2yb1" path="res://entities/on_hit_effects/deal_damage.gd" id="1_d4k3b"]
+
+[resource]
+script = ExtResource("1_d4k3b")
+amount = 1.0
+name = "big damage"
+metadata/_custom_type_script = "uid://bf1g37y7f2yb1"

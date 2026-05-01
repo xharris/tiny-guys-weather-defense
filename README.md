@@ -29,12 +29,13 @@
 - [x] wave
     - [x] time between spawns
     - [x] enemies
-- [ ] TODO every X waves, add an ability
-    - [ ] pick from 2-3
+- [x] every X waves, add an ability
+    - [x] pick from 2-3
     - [ ] countdown timer to pick?
 - more enemies
     - [ ] ant
     - [ ] spider
+- [ ] add surrounding trees
 
 ## Inspiration
 

@@ -15,7 +15,7 @@ func _enter(me: StateMachine):
     # add abilities
     if not me.ability_ctrl:
         return _dev.warn("no [code]ability_ctrl[/code] set")
-    var all_next = Abilities.get_next_abilities(me.ability_ctrl.abilities)
+    var all_next = Abilities.get_next_abilities(me.ability_ctrl, me.ability_ctrl.abilities)
     if all_next.is_empty():
         _dev.dump("no abilities to pick")
         return me.go_to_previous()

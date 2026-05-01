@@ -24,9 +24,19 @@ func _ready() -> void:
     entities.add_to_group(Groups.entities)
     enemy_factory.spawned.connect(_on_enemy_factory_spawned)
     
-    var world_size = get_viewport_rect().size
-    ui.offset = -world_size / 2
+    var view_rect = get_viewport_rect()
+    ui.offset = -view_rect.size / 2
     states.ability_ctrl = player.ability_ctrl
+    
+    # random blades of grass
+    for i in randi_range(15, 30):
+        var instance: GrassBladeSprite = GrassBladeSprite.SCENE.instantiate()
+        entities.add_child(instance)
+        instance.scale = Vector2.ONE * randf_range(6, 8)
+        instance.global_position = Vector2(
+            randi_range(view_rect.position.x, view_rect.position.x + view_rect.size.x),
+            randi_range(view_rect.position.y, view_rect.position.y + view_rect.size.y)
+        ) - (view_rect.size/2)
 
 func _on_enemy_factory_spawned(enemy: Enemy):
     entities.add_child(enemy)

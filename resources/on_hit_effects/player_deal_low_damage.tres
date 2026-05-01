@@ -4,6 +4,6 @@
 
 [resource]
 script = ExtResource("1_paxnt")
-name = "player deal low dmg"
+name = "low damage"
 hit_groups = Array[String](["enemy"])
 metadata/_custom_type_script = "uid://bf1g37y7f2yb1"

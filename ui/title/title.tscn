@@ -17,18 +17,22 @@ script = ExtResource("1_7vilc")
 [node name="PlayContainer" parent="." unique_id=493932922 instance=ExtResource("2_3dq5w")]
 layout_mode = 1
 
-[node name="Control" type="Control" parent="PlayContainer" unique_id=1529568941]
+[node name="VBoxContainer" type="VBoxContainer" parent="PlayContainer" unique_id=2028885535]
+modulate = Color(0, 0, 0, 0.45882353)
 layout_mode = 2
 size_flags_vertical = 3
 mouse_filter = 2
+theme_override_constants/separation = 0
 
-[node name="Label" type="Label" parent="PlayContainer/Control" unique_id=2078207495]
-layout_mode = 0
-offset_top = 4.0
-offset_right = 1152.0
-offset_bottom = 52.0
+[node name="Label" type="Label" parent="PlayContainer/VBoxContainer" unique_id=2078207495]
+layout_mode = 2
 theme_override_fonts/font = ExtResource("2_kh5fk")
 theme_override_font_sizes/font_size = 48
 text = "Tiny Wizard Weather Defense"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="PlayContainer/VBoxContainer" unique_id=592760630]
+layout_mode = 2
+text = "Click to begin defending"
+horizontal_alignment = 1

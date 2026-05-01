@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="AbilityModifyCrit" format=3 uid="uid://cyv3vixpupv20"]
+
+[ext_resource type="Script" uid="uid://46y1q2gys7mw" path="res://components/ability_controller/ability_can_pick.gd" id="1_in76t"]
+[ext_resource type="Script" uid="uid://cc3f5cusy5j1g" path="res://entities/abilities/modify_crit.gd" id="1_wpbf0"]
+[ext_resource type="Resource" uid="uid://qvr1h6wanelf" path="res://resources/ability_can_picks/has_active_ability.tres" id="2_2any3"]
+
+[resource]
+script = ExtResource("1_wpbf0")
+value = 0.2
+name = "Moderate Weather"
+description = "Increase critical strike chance"
+weight = 0.25
+can_pick = Array[ExtResource("1_in76t")]([ExtResource("2_2any3")])
+metadata/_custom_type_script = "uid://cc3f5cusy5j1g"

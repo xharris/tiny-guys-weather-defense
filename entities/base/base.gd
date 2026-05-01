@@ -9,6 +9,8 @@ static func get_closest(to: Node2D) -> Base:
 @onready var sprite: BaseSprite = %BaseSprite
 @onready var hp: Hp = %Hp
 @onready var hitbox: Hitbox = %Hitbox
+@onready var vfx: Vfx = %Vfx
+@onready var audio_player: AudioStreamPlayer2D = %AudioStreamPlayer2D
 
 @export var config: BaseConfig
 
@@ -20,9 +22,15 @@ func get_radius() -> float:
     
 func _ready() -> void:
     add_to_group(Groups.base)
+    hp.damaged.connect(_on_hp_damaged)
     hitbox.apply_on_hit.connect(_on_apply_on_hit)
     if config:
         hp.current = HP.sample(config.hp)
+
+func _on_hp_damaged(_amount: int):
+    audio_player.play()
+    vfx.hurt = 1.0
+    vfx.bounce()
     
 func _on_apply_on_hit(_source: Hitbox, on_hit: OnHitEffect):
     on_hit.apply_hp(hp)

@@ -1,7 +1,9 @@
 extends Node2D
 class_name Vfx
 
-var _dev = Dev.new(true)
+var _dev = Dev.new()
+
+@onready var animation_player: AnimationPlayer = %AnimationPlayer
 
 @export var playing: bool = true
 @export_range(0, 1, 1.0) var hurt: float = 0.0:
@@ -20,10 +22,6 @@ func stop():
 func is_playing():
     return playing
 
-func _ready() -> void:
-    if not playing:
-        stop()
-
 func has_active_trail() -> bool:
     for child in find_children("*"):
         if child is Trail:
@@ -31,6 +29,13 @@ func has_active_trail() -> bool:
                 _dev.dump("trail is still active: {0}", [child.line.get_point_count()])
                 return true
     return false
+    
+func bounce():
+    animation_player.play("bounce")
+    
+func _ready() -> void:
+    if not playing:
+        stop()
 
 func _process(delta: float) -> void:
     var final_color = Color.WHITE

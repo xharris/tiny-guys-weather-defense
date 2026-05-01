@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://binmtsj5in1fy" path="res://components/trail/trail.tscn" id="4_pdxqd"]
 [ext_resource type="Texture2D" uid="uid://dw1bji3w8phku" path="res://resources/abilities/raindrop/orb.png" id="5_pdxqd"]
 [ext_resource type="Material" uid="uid://cvr3s6neaxar1" path="res://resources/abilities/raindrop/raindrop_particles.tres" id="6_twex7"]
+[ext_resource type="PackedScene" uid="uid://cjqtjrm6yl1c5" path="res://components/cloud_sprite/cloud_sprite.tscn" id="7_ku5jq"]
 
 [node name="Drop" type="CharacterBody2D" unique_id=811370347]
 script = ExtResource("1_ok3h6")
@@ -42,3 +43,7 @@ unique_name_in_owner = true
 [node name="AudioLand" type="AudioStreamPlayer2D" parent="." unique_id=1535488062]
 unique_name_in_owner = true
 volume_db = -15.0
+
+[node name="CloudSprite" parent="." unique_id=424814157 instance=ExtResource("7_ku5jq")]
+unique_name_in_owner = true
+top_level = true

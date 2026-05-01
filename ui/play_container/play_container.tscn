@@ -10,9 +10,5 @@ grow_vertical = 2
 [node name="Spacer" type="Control" parent="." unique_id=1392810677]
 layout_mode = 2
 size_flags_vertical = 3
-mouse_filter = 2
-
-[node name="Spacer2" type="Control" parent="." unique_id=322679127]
-layout_mode = 2
-size_flags_vertical = 3
+size_flags_stretch_ratio = 1.2
 mouse_filter = 2

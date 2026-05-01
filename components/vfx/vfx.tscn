@@ -1,6 +1,52 @@
 [gd_scene format=3 uid="uid://veofgcxffx81"]
 
 [ext_resource type="Script" uid="uid://bfiiomhotwqft" path="res://components/vfx/vfx.gd" id="1_o3b2c"]
+[ext_resource type="Texture2D" uid="uid://bv1t88mfgydri" path="res://resources/enemies/fly/fly.png" id="2_1dlr4"]
+
+[sub_resource type="Animation" id="Animation_cfyc3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_1dlr4"]
+resource_name = "bounce"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0.5, 1.5), Vector2(1.5, 0.8), Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cfyc3"]
+_data = {
+&"RESET": SubResource("Animation_cfyc3"),
+&"bounce": SubResource("Animation_1dlr4")
+}
 
 [node name="Vfx" type="Node2D" unique_id=338783177]
 script = ExtResource("1_o3b2c")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=583908907]
+unique_name_in_owner = true
+libraries/ = SubResource("AnimationLibrary_cfyc3")
+speed_scale = 6.0
+
+[node name="TestSprite" type="Sprite2D" parent="." unique_id=1339672824]
+visible = false
+texture = ExtResource("2_1dlr4")

@@ -1,0 +1,30 @@
+[gd_resource type="Resource" script_class="AbilityLine" format=3 uid="uid://b2blx6fhj17q8"]
+
+[ext_resource type="AudioStream" uid="uid://djr1t8jckg3nw" path="res://resources/abilities/lightning_strike/freesound_community-shotgun-03-38220.mp3" id="1_hgmnx"]
+[ext_resource type="Texture2D" uid="uid://u76j2jut12nu" path="res://resources/abilities/lightning_strike/lightning.png" id="1_pt310"]
+[ext_resource type="Resource" uid="uid://bq0s1wqow24ym" path="res://resources/abilities/basic_hitbox.tres" id="1_v38pd"]
+[ext_resource type="Script" uid="uid://46y1q2gys7mw" path="res://components/ability_controller/ability_can_pick.gd" id="2_6vhrb"]
+[ext_resource type="Script" uid="uid://rauoa0p62aej" path="res://components/hitbox/on_hit_effect.gd" id="2_tmyty"]
+[ext_resource type="Script" uid="uid://b7xgvfmq611cg" path="res://entities/abilities/line/line_config.gd" id="2_v38pd"]
+[ext_resource type="Resource" uid="uid://dpt7h207gy82s" path="res://resources/ability_can_picks/has_crit_chance.tres" id="3_abj7o"]
+[ext_resource type="Resource" uid="uid://dmp6cntl88sm8" path="res://resources/on_hit_effects/player_deal_high_damage.tres" id="3_um4lw"]
+[ext_resource type="Material" uid="uid://fr7pfa0wefxr" path="res://resources/abilities/lightning_strike/lightning_strike_particles.tres" id="6_oedkf"]
+[ext_resource type="Texture2D" uid="uid://dw1bji3w8phku" path="res://resources/abilities/raindrop/orb.png" id="7_2lu4x"]
+[ext_resource type="Resource" uid="uid://c45ds64o7gc1e" path="res://resources/abilities/lightning_strike/lightning_strike_cloud.tres" id="8_cloud"]
+
+[resource]
+script = ExtResource("2_v38pd")
+cloud = ExtResource("8_cloud")
+line_texture = ExtResource("1_pt310")
+line_color = Color(0.73333335, 0.87058824, 0.9843137, 1)
+hitbox = ExtResource("1_v38pd")
+hitbox_on_hit_effects = Array[ExtResource("2_tmyty")]([ExtResource("3_um4lw")])
+audio_on_hit = ExtResource("1_hgmnx")
+particles_texture = ExtResource("7_2lu4x")
+particles_process_material = ExtResource("6_oedkf")
+name = "Lightning Strike"
+description = "Instant strike"
+can_crit = false
+only_crit = true
+can_pick = Array[ExtResource("2_6vhrb")]([ExtResource("3_abj7o")])
+metadata/_custom_type_script = "uid://b7xgvfmq611cg"

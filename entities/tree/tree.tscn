@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://b0xnjbp1lo42f"]
+
+[ext_resource type="Texture2D" uid="uid://d26ynq32nivtl" path="res://entities/tree/tree2.png" id="1_xs1ax"]
+[ext_resource type="PackedScene" uid="uid://bkfwwx5v63cyq" path="res://components/shadow/shadow.tscn" id="2_20x5l"]
+
+[node name="Tree" type="Node2D" unique_id=727259039]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1309991498]
+position = Vector2(0, -12)
+texture = ExtResource("1_xs1ax")
+
+[node name="Shadow" parent="." unique_id=563252791 instance=ExtResource("2_20x5l")]
+size = 4.0

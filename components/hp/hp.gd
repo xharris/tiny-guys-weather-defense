@@ -1,7 +1,7 @@
 extends Node2D
 class_name Hp
 
-var _dev = Dev.new(true)
+var _dev = Dev.new()
 
 signal died
 signal damaged(amount: int)

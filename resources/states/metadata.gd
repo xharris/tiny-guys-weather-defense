@@ -11,3 +11,5 @@ static func get_data(me: StateMachine) -> Metadata:
 var wave_count: int = 0
 var waves_until_pick_ability: int = 0
 var difficulty: float = 0.0
+
+var orbit_toward_angle: float = 0.0

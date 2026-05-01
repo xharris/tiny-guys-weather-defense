@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://csbcmsr577gde"]
+
+[ext_resource type="Script" uid="uid://d2urtj4120pge" path="res://entities/abilities/line/line.gd" id="1_j1fhi"]
+[ext_resource type="PackedScene" uid="uid://rsij4bxwpmrc" path="res://components/hitbox/hitbox.tscn" id="2_l7s4w"]
+[ext_resource type="PackedScene" uid="uid://veofgcxffx81" path="res://components/vfx/vfx.tscn" id="2_n8nn2"]
+[ext_resource type="Texture2D" uid="uid://u76j2jut12nu" path="res://resources/abilities/lightning_strike/lightning.png" id="4_ycvlt"]
+[ext_resource type="Texture2D" uid="uid://dw1bji3w8phku" path="res://resources/abilities/raindrop/orb.png" id="5_ycvlt"]
+[ext_resource type="Material" uid="uid://fr7pfa0wefxr" path="res://resources/abilities/lightning_strike/lightning_strike_particles.tres" id="6_gtq8f"]
+[ext_resource type="PackedScene" uid="uid://cjqtjrm6yl1c5" path="res://components/cloud_sprite/cloud_sprite.tscn" id="7_mrc63"]
+
+[node name="Line" type="Node2D" unique_id=436218292]
+script = ExtResource("1_j1fhi")
+
+[node name="Vfx" parent="." unique_id=338783177 instance=ExtResource("2_n8nn2")]
+
+[node name="Line2D" type="Line2D" parent="Vfx" unique_id=1615530200]
+unique_name_in_owner = true
+texture_repeat = 2
+points = PackedVector2Array(0, 0, 0, 224)
+width = 32.0
+texture = ExtResource("4_ycvlt")
+texture_mode = 1
+
+[node name="Hitbox" parent="." unique_id=1761563124 instance=ExtResource("2_l7s4w")]
+unique_name_in_owner = true
+is_hurtbox = false
+
+[node name="HitboxTimer" type="Timer" parent="." unique_id=379903963]
+unique_name_in_owner = true
+wait_time = 0.1
+
+[node name="AudioOnHit" type="AudioStreamPlayer2D" parent="." unique_id=1309598860]
+unique_name_in_owner = true
+volume_db = -20.0
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="." unique_id=1633660189]
+unique_name_in_owner = true
+amount = 4
+texture = ExtResource("5_ycvlt")
+explosiveness = 0.9
+process_material = ExtResource("6_gtq8f")
+
+[node name="Cloud" type="Sprite2D" parent="." unique_id=1512934420]
+
+[node name="CloudSprite" parent="." unique_id=424814157 instance=ExtResource("7_mrc63")]
+unique_name_in_owner = true
+top_level = true

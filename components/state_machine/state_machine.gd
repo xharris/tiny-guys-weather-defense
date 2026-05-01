@@ -1,7 +1,7 @@
 extends Node2D
 class_name StateMachine
 
-var _dev = Dev.new(true)
+var _dev = Dev.new()
 
 static var UI_DISMISS_METHODS = ["dismiss", "ui_hide"]
 
@@ -47,7 +47,7 @@ func remove_ui(scene: PackedScene, dismiss_method: String = ""):
                 if parent:
                     parent.remove_child(c)
     if not found:
-        _dev.warn("ui {0} not found", [scene.resource_path])
+        _dev.warn("cannot remove ui, {0} not found in state {1}", [scene.resource_path, current.resource_path.get_file()])
 
 func go_to_previous():
     if not prev_state:
@@ -70,13 +70,15 @@ func switch(state: State = null):
 
 func _ready() -> void:
     if current:
-        switch.call_deferred(current)
+        var temp_current = current
+        current = null
+        switch.call_deferred(temp_current)
 
 func _process(delta: float) -> void:
     if current:
         duration += delta
     if current and current.max_duration > 0 and duration >= current.max_duration:
-        _dev.dump("reached max duration, switch to '{0}'", [current.max_duration_state_path])
+        _dev.dump("reached max duration")
         var next = current.max_duration_state
         if next == null and current.max_duration_state_path != "":
             next = load(current.max_duration_state_path)

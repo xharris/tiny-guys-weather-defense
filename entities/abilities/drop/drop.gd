@@ -14,6 +14,7 @@ static var FALL_SPEED_CURVE = preload("res://resources/curves/fall_from_top_spee
 @onready var particles: GPUParticles2D = %GPUParticles2D
 @onready var audio_on_hit: AudioStreamPlayer2D = %AudioOnHit
 @onready var audio_land: AudioStreamPlayer2D = %AudioLand
+@onready var cloud_sprite: CloudSprite = %CloudSprite
 
 var config: AbilityDrop
 var ctx: AbilityContext
@@ -43,6 +44,10 @@ func _ready() -> void:
     global_position = start_position
     _dev.dump("mouse {2}, start {0}, target {1}", [start_position, target_position, get_global_mouse_position()])
 
+    # cloud
+    cloud_sprite.config = config.cloud
+    cloud_sprite.global_position = target_position
+        
 func _on_hitbox_hit(target: Hitbox):
     audio_on_hit.play()
 
@@ -51,12 +56,14 @@ func _on_remove_timer():
     var parent = get_parent()
     if not parent:
         return
+    NodeUtil.move_up_in_tree(cloud_sprite)
+    cloud_sprite.dismiss()
     # reparent nodes so they dont get cut off
     for player: AudioStreamPlayer2D in [audio_land, audio_on_hit]:
         if player.playing:
-            player.reparent(parent)
+            NodeUtil.move_up_in_tree(player)
             player.finished.connect(player.queue_free)
-    particles.reparent(parent)
+    NodeUtil.move_up_in_tree(particles)
     parent.remove_child(self)
 
 func _process(delta: float) -> void:

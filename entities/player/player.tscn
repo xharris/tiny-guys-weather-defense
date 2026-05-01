@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://3enmc8asala3" path="res://entities/player/player.gd" id="1_sglur"]
 [ext_resource type="PackedScene" uid="uid://m0ls3lnutwcu" path="res://components/player_sprite/player_sprite.tscn" id="1_symyc"]
 [ext_resource type="PackedScene" uid="uid://iup8dkigcfy1" path="res://components/orbit_aim/orbit_aim.tscn" id="2_abrql"]
+[ext_resource type="PackedScene" uid="uid://bkfwwx5v63cyq" path="res://components/shadow/shadow.tscn" id="4_8fjmc"]
 [ext_resource type="PackedScene" uid="uid://r8ndb4yrfeau" path="res://components/ability_controller/ability_controller.tscn" id="4_bls4j"]
 [ext_resource type="PackedScene" uid="uid://veofgcxffx81" path="res://components/vfx/vfx.tscn" id="5_8fjmc"]
 
@@ -18,6 +19,9 @@ size = 1.0
 
 [node name="AbilityController" parent="." unique_id=62650995 instance=ExtResource("4_bls4j")]
 unique_name_in_owner = true
+
+[node name="Shadow" parent="." unique_id=563252791 instance=ExtResource("4_8fjmc")]
+size = 3.0
 
 [node name="Vfx" parent="." unique_id=1397666366 instance=ExtResource("5_8fjmc")]
 

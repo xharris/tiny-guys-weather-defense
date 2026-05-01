@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://beuv6n5msa1g3"]
+
+[ext_resource type="Script" uid="uid://bfwao5pte1hdp" path="res://components/grass_blade_sprite/grass_blade_sprite.gd" id="1_6jagj"]
+[ext_resource type="Texture2D" uid="uid://b270u1lqac1dw" path="res://components/grass_blade_sprite/grass blades.png" id="1_r64cc"]
+
+[node name="GrassBladeSprite" type="Node2D" unique_id=473405251]
+script = ExtResource("1_6jagj")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=566525062]
+unique_name_in_owner = true
+texture = ExtResource("1_r64cc")
+offset = Vector2(0, -2.5)
+hframes = 3

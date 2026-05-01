@@ -2,13 +2,18 @@
 
 [ext_resource type="PackedScene" uid="uid://bp61l4mjhw2r" path="res://components/base_sprite/base_sprite.tscn" id="1_3i11b"]
 [ext_resource type="Script" uid="uid://gnulgf0krh4m" path="res://entities/base/base.gd" id="1_qyh2h"]
+[ext_resource type="PackedScene" uid="uid://veofgcxffx81" path="res://components/vfx/vfx.tscn" id="2_0e5r6"]
 [ext_resource type="PackedScene" uid="uid://rsij4bxwpmrc" path="res://components/hitbox/hitbox.tscn" id="3_0e5r6"]
 [ext_resource type="PackedScene" uid="uid://hgobe6jntfw6" path="res://components/hp/hp.tscn" id="3_6xdyk"]
+[ext_resource type="AudioStream" uid="uid://jfr0dku6pman" path="res://resources/abilities/raindrop/universfield-classic-punch-impact-352711.mp3" id="6_warcs"]
 
 [node name="Base" type="Node2D" unique_id=1595243073]
 script = ExtResource("1_qyh2h")
 
-[node name="BaseSprite" parent="." unique_id=1334906754 instance=ExtResource("1_3i11b")]
+[node name="Vfx" parent="." unique_id=338783177 instance=ExtResource("2_0e5r6")]
+unique_name_in_owner = true
+
+[node name="BaseSprite" parent="Vfx" unique_id=1334906754 instance=ExtResource("1_3i11b")]
 unique_name_in_owner = true
 position = Vector2(0, 2)
 
@@ -20,3 +25,9 @@ unique_name_in_owner = true
 
 [node name="AudioListener2D" type="AudioListener2D" parent="." unique_id=21564055]
 current = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=550253715]
+unique_name_in_owner = true
+stream = ExtResource("6_warcs")
+volume_db = -10.0
+pitch_scale = 1.2

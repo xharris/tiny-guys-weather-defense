@@ -7,6 +7,8 @@ class_name EnemyConfig
 @export var initial_state: State
 @export var count: int = 1
 @export var count_range: int = 0
+@export var count_time_between: float = 0.5
 @export var hp: float = 0.0
 @export var hitbox: HitboxConfig
 @export var hitbox_on_hit_effects: Array[OnHitEffect]
+@export var shadow_offset: Vector2

@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Wave" format=3 uid="uid://yyk5iiscjwko"]
+
+[ext_resource type="Script" uid="uid://tt4rv2874odu" path="res://entities/enemy/enemy_config.gd" id="1_jj7l1"]
+[ext_resource type="Resource" uid="uid://degkkrlffe0w0" path="res://resources/enemies/fly/fly.tres" id="2_00q8q"]
+[ext_resource type="Script" uid="uid://os24csw4nytu" path="res://entities/enemy_factory/wave.gd" id="2_ov86r"]
+
+[resource]
+script = ExtResource("2_ov86r")
+name = "Many Flies"
+enemy_pool = Array[ExtResource("1_jj7l1")]([ExtResource("2_00q8q")])
+enemy_every = 0.0
+enemy_spawn_limit = 1.0
+weight = 0.8
+metadata/_custom_type_script = "uid://os24csw4nytu"

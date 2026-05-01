@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="CanPickCmpCritChance" format=3 uid="uid://dpt7h207gy82s"]
+
+[ext_resource type="Script" uid="uid://cd03hk8t1iuyx" path="res://components/ability_controller/ability_can_picks/cmp_crit_chance.gd" id="1_7n88n"]
+
+[resource]
+script = ExtResource("1_7n88n")
+cmp = 2
+metadata/_custom_type_script = "uid://cd03hk8t1iuyx"

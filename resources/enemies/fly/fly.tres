@@ -10,9 +10,10 @@
 
 [resource]
 script = ExtResource("1_4houe")
-name = "fly"
+name = "Fly"
 sprite = ExtResource("2_q18pk")
 initial_state = ExtResource("1_q18pk")
 hitbox = ExtResource("1_ijusw")
 hitbox_on_hit_effects = Array[ExtResource("1_4tw1f")]([ExtResource("2_has0f"), ExtResource("3_has0f")])
+shadow_offset = Vector2(0, 16)
 metadata/_custom_type_script = "uid://tt4rv2874odu"

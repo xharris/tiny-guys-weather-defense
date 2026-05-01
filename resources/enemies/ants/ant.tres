@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="EnemyConfig" format=3 uid="uid://fwkagsougoqs"]
+
+[ext_resource type="Script" uid="uid://rauoa0p62aej" path="res://components/hitbox/on_hit_effect.gd" id="1_fsjjl"]
+[ext_resource type="Script" uid="uid://tt4rv2874odu" path="res://entities/enemy/enemy_config.gd" id="2_ti3x6"]
+
+[resource]
+script = ExtResource("2_ti3x6")
+name = "Ant"
+metadata/_custom_type_script = "uid://tt4rv2874odu"

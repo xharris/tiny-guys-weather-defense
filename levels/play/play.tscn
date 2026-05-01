@@ -1,10 +1,12 @@
 [gd_scene format=3 uid="uid://bjc2x8woww8fs"]
 
 [ext_resource type="Script" uid="uid://qn751olbucor" path="res://levels/play/play.gd" id="1_svcyk"]
+[ext_resource type="PackedScene" uid="uid://b0xnjbp1lo42f" path="res://entities/tree/tree.tscn" id="2_bavt8"]
 [ext_resource type="PackedScene" uid="uid://c4mrn0662oesy" path="res://entities/enemy_factory/enemy_factory.tscn" id="2_kiob8"]
 [ext_resource type="PackedScene" uid="uid://bwbmv4jddck8m" path="res://entities/base/base.tscn" id="2_tpncu"]
 [ext_resource type="PackedScene" uid="uid://b4v2slhf7k5g8" path="res://entities/player/player.tscn" id="3_avta7"]
 [ext_resource type="Resource" uid="uid://h51ijtaoeb3p" path="res://resources/base_configs/cube.tres" id="6_bavt8"]
+[ext_resource type="AudioStream" uid="uid://rk5bwbdka51p" path="res://resources/music/soundreality-spring-forest-nature-332842.mp3" id="8_me25x"]
 [ext_resource type="Resource" uid="uid://djqgs0ve6ehp7" path="res://resources/states/play_title_screen.tres" id="9_bavt8"]
 [ext_resource type="PackedScene" uid="uid://c3w0pmm7l0asa" path="res://components/state_machine/state_machine.tscn" id="13_x4po3"]
 
@@ -39,6 +41,54 @@ follow_viewport_enabled = true
 unique_name_in_owner = true
 y_sort_enabled = true
 
+[node name="Tree" parent="Entities" unique_id=727259039 instance=ExtResource("2_bavt8")]
+position = Vector2(-268.99997, -97.99999)
+scale = Vector2(5, 5)
+
+[node name="Tree2" parent="Entities" unique_id=59718282 instance=ExtResource("2_bavt8")]
+position = Vector2(-144.00003, -111)
+scale = Vector2(5, 5)
+
+[node name="Tree3" parent="Entities" unique_id=1176824797 instance=ExtResource("2_bavt8")]
+position = Vector2(-299.00003, 19)
+scale = Vector2(5, 5)
+
+[node name="Tree4" parent="Entities" unique_id=820016302 instance=ExtResource("2_bavt8")]
+position = Vector2(-329, 155)
+scale = Vector2(5, 5)
+
+[node name="Tree5" parent="Entities" unique_id=1015511095 instance=ExtResource("2_bavt8")]
+position = Vector2(-30.00003, -131.99997)
+scale = Vector2(5, 5)
+
+[node name="Tree6" parent="Entities" unique_id=1033683256 instance=ExtResource("2_bavt8")]
+position = Vector2(243.99997, -93)
+scale = Vector2(5, 5)
+
+[node name="Tree7" parent="Entities" unique_id=1248408650 instance=ExtResource("2_bavt8")]
+position = Vector2(115.000015, -136)
+scale = Vector2(5, 5)
+
+[node name="Tree8" parent="Entities" unique_id=621350748 instance=ExtResource("2_bavt8")]
+position = Vector2(276, 48.99997)
+scale = Vector2(5, 5)
+
+[node name="Tree9" parent="Entities" unique_id=1693373451 instance=ExtResource("2_bavt8")]
+position = Vector2(348.00003, 171)
+scale = Vector2(5, 5)
+
+[node name="Tree10" parent="Entities" unique_id=1784574683 instance=ExtResource("2_bavt8")]
+position = Vector2(157.00002, 329)
+scale = Vector2(5, 5)
+
+[node name="Tree11" parent="Entities" unique_id=1657117520 instance=ExtResource("2_bavt8")]
+position = Vector2(-153.99995, 347)
+scale = Vector2(5, 5)
+
+[node name="Tree12" parent="Entities" unique_id=387254097 instance=ExtResource("2_bavt8")]
+position = Vector2(5.9999695, 373)
+scale = Vector2(5, 5)
+
 [node name="Base" parent="Entities" unique_id=1595243073 instance=ExtResource("2_tpncu")]
 unique_name_in_owner = true
 config = ExtResource("6_bavt8")
@@ -62,3 +112,8 @@ disabled = true
 unique_name_in_owner = true
 current = ExtResource("9_bavt8")
 ui = NodePath("../UI")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=778679059]
+stream = ExtResource("8_me25x")
+volume_db = -25.0
+autoplay = true

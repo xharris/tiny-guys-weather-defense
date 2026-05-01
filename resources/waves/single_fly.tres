@@ -6,6 +6,6 @@
 
 [resource]
 script = ExtResource("3_e01cl")
+name = "Single Fly"
 enemy_pool = Array[ExtResource("1_khn1q")]([ExtResource("2_j0l4m")])
-enemy_spawn_limit = 10
 metadata/_custom_type_script = "uid://os24csw4nytu"

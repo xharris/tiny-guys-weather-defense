@@ -4,14 +4,102 @@
 [ext_resource type="Texture2D" uid="uid://fvsimfawgtyq" path="res://components/player_sprite/wizard.png" id="1_vg45v"]
 [ext_resource type="Texture2D" uid="uid://dweysu0ccxbcq" path="res://components/player_sprite/hand_wand.png" id="1_yhgc0"]
 
+[sub_resource type="Animation" id="Animation_7030n"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BodyFaceDirection/AnimateBody/Body:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BodyFaceDirection/AnimateBody:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("BodyFaceDirection/AnimateBody:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_7trms"]
+resource_name = "stun"
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BodyFaceDirection/AnimateBody/Body:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BodyFaceDirection/AnimateBody:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-10, 0), Vector2(8, 0), Vector2(-6, 0), Vector2(4, 0), Vector2(0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("BodyFaceDirection/AnimateBody:rotation")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 0.5235987755982988]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0p3yo"]
+_data = {
+&"RESET": SubResource("Animation_7030n"),
+&"stun": SubResource("Animation_7trms")
+}
+
 [node name="PlayerSprite" type="Node2D" unique_id=589942968]
 script = ExtResource("1_7030n")
 
 [node name="BodyFaceDirection" type="Node2D" parent="." unique_id=262388703]
 unique_name_in_owner = true
 
-[node name="Body" type="Sprite2D" parent="BodyFaceDirection" unique_id=277144361]
+[node name="AnimateBody" type="Node2D" parent="BodyFaceDirection" unique_id=17729234]
+
+[node name="Body" type="Sprite2D" parent="BodyFaceDirection/AnimateBody" unique_id=277144361]
 texture = ExtResource("1_vg45v")
+hframes = 2
 
 [node name="Arm" type="Node2D" parent="." unique_id=1009298897]
 unique_name_in_owner = true
@@ -23,3 +111,8 @@ texture = ExtResource("1_yhgc0")
 [node name="WandTip" type="Marker2D" parent="Arm" unique_id=887555633]
 unique_name_in_owner = true
 position = Vector2(0, -26)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1353589857]
+unique_name_in_owner = true
+libraries/ = SubResource("AnimationLibrary_0p3yo")
+speed_scale = 8.0

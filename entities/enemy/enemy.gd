@@ -10,6 +10,7 @@ static var HP = preload("res://resources/curves/enemy_hp.tres")
 @onready var hitbox: Hitbox = %Hitbox
 @onready var hitbox_shape: CollisionShape2D = %CollisionShape2D
 @onready var vfx: Vfx = %Vfx
+@onready var shadow: Shadow = %Shadow
 
 @export var config: EnemyConfig
 
@@ -27,6 +28,7 @@ func _ready() -> void:
 
 func _on_hp_damaged(_amount: int):
     vfx.hurt = 1.0
+    vfx.bounce()
 
 func _on_apply_on_hit(_source: Hitbox, on_hit: OnHitEffect):
     on_hit.apply_hp(hp)
@@ -37,6 +39,7 @@ func _on_died():
         parent.remove_child.call_deferred(self)
 
 func _process(delta: float) -> void:
+    shadow.position = config.shadow_offset
     state.character = self
     if config:
         sprite.sprite.texture = config.sprite
