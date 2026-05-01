@@ -1,18 +1,20 @@
 [gd_scene format=3 uid="uid://cf03gn18jq10f"]
 
 [ext_resource type="Script" uid="uid://wuvmy86y65y2" path="res://entities/enemy/enemy.gd" id="1_ksmh7"]
+[ext_resource type="PackedScene" uid="uid://veofgcxffx81" path="res://components/vfx/vfx.tscn" id="2_d50e0"]
 [ext_resource type="PackedScene" uid="uid://dpn4csnukww6w" path="res://components/enemy_sprite/enemy_sprite.tscn" id="2_im2q6"]
 [ext_resource type="PackedScene" uid="uid://c3w0pmm7l0asa" path="res://components/state_machine/state_machine.tscn" id="3_3fvr7"]
 [ext_resource type="PackedScene" uid="uid://hgobe6jntfw6" path="res://components/hp/hp.tscn" id="4_dt443"]
 [ext_resource type="PackedScene" uid="uid://rsij4bxwpmrc" path="res://components/hitbox/hitbox.tscn" id="5_4wwj3"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_4wwj3"]
-
 [node name="Enemy" type="CharacterBody2D" unique_id=1221818744]
 motion_mode = 1
 script = ExtResource("1_ksmh7")
 
-[node name="EnemySprite" parent="." unique_id=100549976 instance=ExtResource("2_im2q6")]
+[node name="Vfx" parent="." unique_id=338783177 instance=ExtResource("2_d50e0")]
+unique_name_in_owner = true
+
+[node name="EnemySprite" parent="Vfx" unique_id=100549976 instance=ExtResource("2_im2q6")]
 unique_name_in_owner = true
 
 [node name="StateMachine" parent="." unique_id=1767894804 instance=ExtResource("3_3fvr7")]
@@ -24,6 +26,4 @@ unique_name_in_owner = true
 [node name="Hitbox" parent="." unique_id=1761563124 instance=ExtResource("5_4wwj3")]
 unique_name_in_owner = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=684098254]
-unique_name_in_owner = true
-shape = SubResource("CircleShape2D_4wwj3")
+[node name="DeathParticles" type="GPUParticles2D" parent="." unique_id=1955218288]

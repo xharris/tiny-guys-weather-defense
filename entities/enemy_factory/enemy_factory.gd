@@ -10,15 +10,18 @@ signal spawned(enemy: Enemy)
 signal wave_finished
 
 @onready var spawn_timer: Timer = %Spawn
-@onready var wave_timer: Timer = %Wave
 
 @export var wave: Wave
+@export var disabled: bool
 
 var wave_count: int = 0
+
 var _rand = RandomNumberGenerator.new()
 var _spawn_enemy_count: int = 0
 
 func spawn_enemy():
+    if disabled:
+        return
     if not wave:
         spawn_timer.wait_time = 1.0
         return

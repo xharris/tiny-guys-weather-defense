@@ -5,7 +5,11 @@ static var COOLDOWN = preload("res://resources/curves/ability_cooldown.tres")
 
 var _dev = Dev.new()
 
-@export var abilities: Array[Ability]
+@export var abilities: Array[Ability] = []
+
+var crit_chance: float = 0.0:
+    set(v):
+        crit_chance = clampf(v, 0, 1)
 var aim_position: Vector2
 var aim_dir: Vector2
 var spawn_position: Vector2
@@ -18,15 +22,26 @@ func get_context() -> AbilityContext:
 
 func use():
     var entities = get_tree().get_first_node_in_group(Groups.entities)
+    var is_critical = randf() <= crit_chance
     for a in abilities:
         var cd = _cooldown.get(a.name, 0.0)
+        # is off cooldown?
         if cd > 0:
             _dev.dump("{0} on cooldown", [a.name])
+            continue
+        # can crit?
+        if is_critical and not a.can_crit and not a.only_crit:
+            _dev.dump("{0} cannot crit", [a.name])
+            continue
+        # can only crit?
+        if not is_critical and a.only_crit:
+            _dev.dump("{0} can only crit", [a.name])
             continue
         _cooldown.set(a.name, COOLDOWN.sample(a.cooldown))
         _dev.dump("use {0}", [a.name])
         for i in max(1, a.repeat):
             var ctx = get_context()
+            ctx.is_critical = is_critical
             var add_nodes = a.use(ctx)
             if entities:
                 for add_node in add_nodes:

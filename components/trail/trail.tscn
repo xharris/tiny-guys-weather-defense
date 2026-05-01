@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://ca8ohraxbuaye" path="res://components/trail/trail.gd" id="1_khb0s"]
 
 [sub_resource type="Curve" id="Curve_khb0s"]
-_data = [Vector2(0, 0), 0.0, 1.4, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 0.7646812), 1.9413804, 0.0, 0, 0]
 point_count = 2
 
 [node name="Trail" type="Node2D" unique_id=416214288]

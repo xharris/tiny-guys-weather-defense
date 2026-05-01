@@ -1,10 +1,14 @@
 [gd_resource type="Resource" script_class="AbilityDrop" format=3 uid="uid://bwk6roq727511"]
 
+[ext_resource type="Resource" uid="uid://bq0s1wqow24ym" path="res://resources/abilities/raindrop/raindrop_hitbox.tres" id="1_bk0aj"]
 [ext_resource type="Script" uid="uid://81aytbj1kgv4" path="res://entities/abilities/drop/drop_config.gd" id="1_hvl04"]
 [ext_resource type="Script" uid="uid://rauoa0p62aej" path="res://components/hitbox/on_hit_effect.gd" id="1_sx7ks"]
-[ext_resource type="Resource" uid="uid://dtdb1qgwtwu1x" path="res://resources/on_hit_effects/player_deal_low_damage.tres" id="2_bk0aj"]
+[ext_resource type="AudioStream" uid="uid://c2a7fos58yx5" path="res://resources/abilities/raindrop/ahmed_abdulaal-laser-312360.mp3" id="2_01g2x"]
 [ext_resource type="Texture2D" uid="uid://dw1bji3w8phku" path="res://resources/abilities/raindrop/orb.png" id="2_ifail"]
+[ext_resource type="Resource" uid="uid://dtdb1qgwtwu1x" path="res://resources/on_hit_effects/player_deal_low_damage.tres" id="2_sx7ks"]
+[ext_resource type="AudioStream" uid="uid://jfr0dku6pman" path="res://resources/abilities/raindrop/universfield-classic-punch-impact-352711.mp3" id="2_u6q7w"]
 [ext_resource type="Resource" uid="uid://d2cp40t13bntx" path="res://resources/abilities/raindrop/raindrop_trail.tres" id="3_f0cg8"]
+[ext_resource type="Material" uid="uid://cvr3s6neaxar1" path="res://resources/abilities/raindrop/raindrop_particles.tres" id="4_2hse0"]
 
 [resource]
 script = ExtResource("1_hvl04")
@@ -12,6 +16,13 @@ sprite = ExtResource("2_ifail")
 sprite_color = Color(0.011764706, 0.6627451, 0.95686275, 1)
 slant = 50.0
 trail = ExtResource("3_f0cg8")
-on_hit_effects = Array[ExtResource("1_sx7ks")]([ExtResource("2_bk0aj")])
+on_hit_effects = Array[ExtResource("1_sx7ks")]([ExtResource("2_sx7ks")])
+hitbox = ExtResource("1_bk0aj")
+land_audio = ExtResource("2_01g2x")
+on_hit_audio = ExtResource("2_u6q7w")
+particles_amount = 3
+particles_material = ExtResource("4_2hse0")
 name = "raindrop"
+description = "Single drop of rain"
+cooldown = 0.8
 metadata/_custom_type_script = "uid://81aytbj1kgv4"

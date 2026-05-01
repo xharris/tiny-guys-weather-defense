@@ -1,6 +1,7 @@
 extends RefCounted
 class_name AbilityContext
 
+var is_critical: bool
 var ctrl: AbilityController
 var instance: Node2D
 

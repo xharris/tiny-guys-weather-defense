@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="HitboxConfig" format=3 uid="uid://yr5ohuw52dy3"]
+
+[ext_resource type="Script" uid="uid://cdn1gj74575wg" path="res://components/hitbox/hitbox_config.gd" id="1_8ytpq"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qao1k"]
+
+[resource]
+script = ExtResource("1_8ytpq")
+shape = SubResource("CircleShape2D_qao1k")
+metadata/_custom_type_script = "uid://cdn1gj74575wg"

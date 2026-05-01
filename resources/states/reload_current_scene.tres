@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="StateReloadScene" format=3 uid="uid://fptwr6wlc5ki"]
+
+[ext_resource type="Script" uid="uid://duxvk7f8trbar" path="res://entities/states/reload_scene.gd" id="1_d878j"]
+
+[resource]
+script = ExtResource("1_d878j")
+metadata/_custom_type_script = "uid://duxvk7f8trbar"

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="StateUiAnyKey" format=3 uid="uid://b4i30n6637570"]
+
+[ext_resource type="Script" uid="uid://c01kun1cfylvr" path="res://entities/states/ui_any_key.gd" id="1_g4qak"]
+[ext_resource type="PackedScene" uid="uid://c1x3ivhswsqwx" path="res://ui/game_end/game_end.tscn" id="2_g4qak"]
+
+[resource]
+script = ExtResource("1_g4qak")
+ui = ExtResource("2_g4qak")
+on_any_key = "uid://fptwr6wlc5ki"
+metadata/_custom_type_script = "uid://c01kun1cfylvr"

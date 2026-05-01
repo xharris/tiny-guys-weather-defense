@@ -4,6 +4,6 @@
 
 [resource]
 script = ExtResource("1_gbswl")
-max_duration = 1.0
+max_duration = 2.0
 max_duration_state_path = "uid://ddnodgc0mfxma"
 metadata/_custom_type_script = "uid://c2x3ljs70aouq"

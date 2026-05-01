@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://bmp1k735rs1me"]
+
+[node name="PlayContainer" type="VBoxContainer" unique_id=493932922]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Spacer" type="Control" parent="." unique_id=1392810677]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+
+[node name="Spacer2" type="Control" parent="." unique_id=322679127]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2

@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="StatePlayGame" format=3 uid="uid://da3u75lqwv5o4"]
+
+[ext_resource type="Resource" uid="uid://b4i30n6637570" path="res://resources/states/play_win_screen.tres" id="1_1nhmh"]
+[ext_resource type="Resource" uid="uid://b2hyujcbuy8fr" path="res://resources/states/play_game_over.tres" id="1_15pnf"]
+[ext_resource type="Resource" uid="uid://ceuwfux44hj8y" path="res://resources/states/play_pick_ability.tres" id="3_4nibv"]
+[ext_resource type="Script" uid="uid://fo6godl37e1o" path="res://entities/states/play_game.gd" id="3_u7x3f"]
+[ext_resource type="Script" uid="uid://os24csw4nytu" path="res://entities/enemy_factory/wave.gd" id="4_4nibv"]
+[ext_resource type="Resource" uid="uid://cs1u8e4ohho2d" path="res://resources/waves/single_fly.tres" id="5_u7x3f"]
+
+[resource]
+script = ExtResource("3_u7x3f")
+on_no_wave_picked = ExtResource("1_1nhmh")
+on_game_over = ExtResource("1_15pnf")
+on_pick_ability = ExtResource("3_4nibv")
+waves = Array[ExtResource("4_4nibv")]([ExtResource("5_u7x3f")])
+metadata/_custom_type_script = "uid://fo6godl37e1o"

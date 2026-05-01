@@ -17,8 +17,8 @@
         - [x] state: idle (1s)
     - [x] enemy touches base, deals damage, then leaves
 - [ ] ui: game over
-    - [ ] stop waves
-    - [ ] show stats
+    - [x] stop waves
+    - [x] show stats
         - [ ] total waves
         - [ ] total kills
         - [ ] total for each enemy type
@@ -29,9 +29,13 @@
 - [x] wave
     - [x] time between spawns
     - [x] enemies
-- [ ] every X waves, add an ability
+- [ ] TODO every X waves, add an ability
     - [ ] pick from 2-3
     - [ ] countdown timer to pick?
 - more enemies
     - [ ] ant
     - [ ] spider
+
+## Inspiration
+
+![Rain](https://imgur.com/let-rain-oc-mrICIdC)

@@ -4,9 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://rsij4bxwpmrc" path="res://components/hitbox/hitbox.tscn" id="2_wrt0h"]
 [ext_resource type="PackedScene" uid="uid://veofgcxffx81" path="res://components/vfx/vfx.tscn" id="3_25dvl"]
 [ext_resource type="PackedScene" uid="uid://binmtsj5in1fy" path="res://components/trail/trail.tscn" id="4_pdxqd"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_088uo"]
-radius = 25.0
+[ext_resource type="Texture2D" uid="uid://dw1bji3w8phku" path="res://resources/abilities/raindrop/orb.png" id="5_pdxqd"]
+[ext_resource type="Material" uid="uid://cvr3s6neaxar1" path="res://resources/abilities/raindrop/raindrop_particles.tres" id="6_twex7"]
 
 [node name="Drop" type="CharacterBody2D" unique_id=811370347]
 script = ExtResource("1_ok3h6")
@@ -14,9 +13,6 @@ script = ExtResource("1_ok3h6")
 [node name="Hitbox" parent="." unique_id=1761563124 instance=ExtResource("2_wrt0h")]
 unique_name_in_owner = true
 is_hurtbox = false
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=1045985384]
-shape = SubResource("CircleShape2D_088uo")
 
 [node name="RemoveTimer" type="Timer" parent="." unique_id=753551997]
 unique_name_in_owner = true
@@ -30,3 +26,19 @@ unique_name_in_owner = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Vfx" unique_id=1962987529]
 unique_name_in_owner = true
+scale = Vector2(2, 2)
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="Vfx" unique_id=1986890861]
+unique_name_in_owner = true
+emitting = false
+texture = ExtResource("5_pdxqd")
+explosiveness = 0.8
+fixed_fps = 120
+process_material = ExtResource("6_twex7")
+
+[node name="AudioOnHit" type="AudioStreamPlayer2D" parent="." unique_id=586535830]
+unique_name_in_owner = true
+
+[node name="AudioLand" type="AudioStreamPlayer2D" parent="." unique_id=1535488062]
+unique_name_in_owner = true
+volume_db = -15.0

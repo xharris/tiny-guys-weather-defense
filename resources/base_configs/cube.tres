@@ -1,15 +1,12 @@
 [gd_resource type="Resource" script_class="BaseConfig" format=3 uid="uid://h51ijtaoeb3p"]
 
+[ext_resource type="Resource" uid="uid://oetas313y6rx" path="res://resources/base_configs/cube_hitbox.tres" id="1_c1gwt"]
 [ext_resource type="Script" uid="uid://tcqmfhnchexm" path="res://entities/base/base_config.gd" id="1_t8ne5"]
 [ext_resource type="Texture2D" uid="uid://c11hinjqab428" path="res://resources/base_configs/cube.png" id="2_woms0"]
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_woms0"]
-radius = 3.0
-height = 12.0
 
 [resource]
 script = ExtResource("1_t8ne5")
 sprite = ExtResource("2_woms0")
-radius = 8.0
-hitbox_shape = SubResource("CapsuleShape2D_woms0")
+orbit_radius = 8.0
+hitbox = ExtResource("1_c1gwt")
 metadata/_custom_type_script = "uid://tcqmfhnchexm"

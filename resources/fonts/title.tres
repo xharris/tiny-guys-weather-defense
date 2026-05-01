@@ -1,0 +1,7 @@
+[gd_resource type="FontVariation" format=3 uid="uid://c8v0tabha80da"]
+
+[ext_resource type="FontFile" uid="uid://d4la34b6nwa8u" path="res://resources/fonts/Tangerine-Bold.ttf" id="1_toq1k"]
+
+[resource]
+base_font = ExtResource("1_toq1k")
+variation_embolden = 0.5

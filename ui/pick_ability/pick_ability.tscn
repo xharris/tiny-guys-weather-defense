@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://6nwrq7ajevpo"]
+
+[ext_resource type="Script" uid="uid://ca0yr8cp8gpcm" path="res://ui/pick_ability/pick_ability.gd" id="1_l86th"]
+[ext_resource type="FontFile" uid="uid://d4la34b6nwa8u" path="res://resources/fonts/Tangerine-Bold.ttf" id="2_axp3q"]
+[ext_resource type="PackedScene" uid="uid://umbjua6id5pq" path="res://ui/pick_ability/ability.tscn" id="2_pwnvb"]
+
+[node name="PickAbility" type="Control" unique_id=2090750251]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_l86th")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1486450481]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_top = 250
+theme_override_constants/margin_bottom = 250
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=455560514]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1867699243]
+layout_mode = 2
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("2_axp3q")
+theme_override_font_sizes/font_size = 32
+text = "Pick a new spell!"
+horizontal_alignment = 1
+
+[node name="Abilities" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1684059837]
+unique_name_in_owner = true
+layout_mode = 2
+alignment = 1
+
+[node name="Ability" parent="MarginContainer/VBoxContainer/Abilities" unique_id=605119604 instance=ExtResource("2_pwnvb")]
+layout_mode = 2
+
+[node name="Ability2" parent="MarginContainer/VBoxContainer/Abilities" unique_id=1658265528 instance=ExtResource("2_pwnvb")]
+layout_mode = 2

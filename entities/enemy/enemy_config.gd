@@ -8,5 +8,5 @@ class_name EnemyConfig
 @export var count: int = 1
 @export var count_range: int = 0
 @export var hp: float = 0.0
-@export var hitbox_radius: float = 10.0
+@export var hitbox: HitboxConfig
 @export var hitbox_on_hit_effects: Array[OnHitEffect]

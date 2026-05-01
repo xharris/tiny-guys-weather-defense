@@ -1,0 +1,6 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://bimd7eq7kbwog"]
+
+[ext_resource type="Shader" uid="uid://c1fl3mbeiovc1" path="res://resources/materials/reflect2.gdshader" id="1_mkf06"]
+
+[resource]
+shader = ExtResource("1_mkf06")

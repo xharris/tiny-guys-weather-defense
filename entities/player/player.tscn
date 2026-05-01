@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://m0ls3lnutwcu" path="res://components/player_sprite/player_sprite.tscn" id="1_symyc"]
 [ext_resource type="PackedScene" uid="uid://iup8dkigcfy1" path="res://components/orbit_aim/orbit_aim.tscn" id="2_abrql"]
 [ext_resource type="PackedScene" uid="uid://r8ndb4yrfeau" path="res://components/ability_controller/ability_controller.tscn" id="4_bls4j"]
-[ext_resource type="Script" uid="uid://bcdlpi4kh3yyv" path="res://components/ability_controller/ability.gd" id="5_fkugw"]
+[ext_resource type="PackedScene" uid="uid://veofgcxffx81" path="res://components/vfx/vfx.tscn" id="5_8fjmc"]
 
 [node name="Player" type="Node2D" unique_id=980467936]
 script = ExtResource("1_sglur")
@@ -18,8 +18,9 @@ size = 1.0
 
 [node name="AbilityController" parent="." unique_id=62650995 instance=ExtResource("4_bls4j")]
 unique_name_in_owner = true
-abilities = Array[ExtResource("5_fkugw")]([])
 
-[node name="PlayerSprite" parent="." unique_id=589942968 instance=ExtResource("1_symyc")]
+[node name="Vfx" parent="." unique_id=1397666366 instance=ExtResource("5_8fjmc")]
+
+[node name="PlayerSprite" parent="Vfx" unique_id=589942968 instance=ExtResource("1_symyc")]
 unique_name_in_owner = true
 position = Vector2(0, -10)

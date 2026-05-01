@@ -17,3 +17,6 @@ func _process(me: StateMachine, delta: float):
     
 func _exit(me: StateMachine):
     pass
+
+func _unhandled_input(me: StateMachine, event: InputEvent) -> void:
+    pass

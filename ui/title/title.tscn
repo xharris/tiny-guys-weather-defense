@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://d3r3aoyijirex"]
+
+[ext_resource type="Script" uid="uid://cba3u0v4a7qgq" path="res://ui/title/title.gd" id="1_7vilc"]
+[ext_resource type="PackedScene" uid="uid://bmp1k735rs1me" path="res://ui/play_container/play_container.tscn" id="2_3dq5w"]
+[ext_resource type="FontVariation" uid="uid://c8v0tabha80da" path="res://resources/fonts/title.tres" id="2_kh5fk"]
+
+[node name="Title" type="Control" unique_id=1916287050]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_7vilc")
+
+[node name="PlayContainer" parent="." unique_id=493932922 instance=ExtResource("2_3dq5w")]
+layout_mode = 1
+
+[node name="Control" type="Control" parent="PlayContainer" unique_id=1529568941]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="PlayContainer/Control" unique_id=2078207495]
+layout_mode = 0
+offset_top = 4.0
+offset_right = 1152.0
+offset_bottom = 52.0
+theme_override_fonts/font = ExtResource("2_kh5fk")
+theme_override_font_sizes/font_size = 48
+text = "Tiny Wizard Weather Defense"
+horizontal_alignment = 1
+vertical_alignment = 1

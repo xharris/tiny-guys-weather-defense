@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="StatePickAbility" format=3 uid="uid://ceuwfux44hj8y"]
+
+[ext_resource type="Script" uid="uid://cc5ykn0n2ywc3" path="res://entities/states/pick_ability.gd" id="1_qtot2"]
+
+[resource]
+script = ExtResource("1_qtot2")
+metadata/_custom_type_script = "uid://cc5ykn0n2ywc3"

@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://cvkyaq3bv1jr4"]
+
+[ext_resource type="Script" uid="uid://bg1qe2f7krvdg" path="res://components/vfx_reflect/vfx_reflect.gd" id="1_12h36"]
+
+[node name="VfxReflect" type="CanvasGroup" unique_id=1171105477]
+script = ExtResource("1_12h36")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=730547427]
+unique_name_in_owner = true
+visible = false
+z_index = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2

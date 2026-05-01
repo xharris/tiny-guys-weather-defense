@@ -7,3 +7,4 @@ script = ExtResource("1_gancb")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1862460369]
 unique_name_in_owner = true
+scale = Vector2(2, 2)

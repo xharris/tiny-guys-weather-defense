@@ -8,6 +8,14 @@ class_name AbilityDrop
 @export var trail: TrailConfig
 @export var on_hit_effects: Array[OnHitEffect]
 @export var remove_wait_time: float = 0.1
+@export var hitbox: HitboxConfig
+
+@export var land_audio: AudioStream
+@export var on_hit_audio: AudioStream
+
+@export_group("Particles", "particles_")
+@export var particles_amount: int = 8
+@export var particles_material: ParticleProcessMaterial
 
 func use(ctx: AbilityContext) -> Array[Node2D]:
     var drop: Drop = Drop.SCENE.instantiate()

@@ -23,16 +23,25 @@ static func apply_on_hits(src: Hitbox, target: Hitbox, on_hits: Array[OnHitEffec
         if skip:
             continue
         src._dev.dump("apply '{0}' to {1}", [on_hit.name, real_target.get_path()])
+        src.on_hit.emit(real_target)
         real_target.apply_on_hit.emit(src, on_hit)
         on_hit.apply()
 
+signal on_hit(target: Hitbox)
 signal apply_on_hit(source: Hitbox, effect: OnHitEffect)
+
+@onready var default_shape: CollisionShape2D = %CollisionShape2D
 
 @export var is_hitbox: bool = true
 @export var is_hurtbox: bool = true
 @export var disabled: bool = false
 @export var on_hit_effects: Array[OnHitEffect]
+@export var config: HitboxConfig:
+    set(v):
+        config = v
+        update()
 
+var shape_scale: Vector2 = Vector2.ONE
 var _entered: Dictionary[Area2D, bool]
 
 func disable():
@@ -43,8 +52,20 @@ func enable():
     for area in get_overlapping_areas():
         _on_area_entered(area)
 
+func update():
+    if not is_inside_tree():
+        return
+    if config:
+        if config.shape:
+            default_shape.rotation = config.rotation
+            default_shape.shape = config.shape
+            default_shape.scale = shape_scale
+        else:
+            default_shape.shape = null
+
 func _ready() -> void:
     area_entered.connect(_on_area_entered)
+    update()
     
 func _on_area_entered(area: Area2D):
     if disabled:

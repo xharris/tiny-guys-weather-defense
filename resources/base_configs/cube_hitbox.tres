@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="HitboxConfig" format=3 uid="uid://oetas313y6rx"]
+
+[ext_resource type="Script" uid="uid://cdn1gj74575wg" path="res://components/hitbox/hitbox_config.gd" id="1_rj06n"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rj06n"]
+radius = 3.0
+height = 12.0
+
+[resource]
+script = ExtResource("1_rj06n")
+shape = SubResource("CapsuleShape2D_rj06n")
+metadata/_custom_type_script = "uid://cdn1gj74575wg"

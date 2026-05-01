@@ -9,7 +9,6 @@ static func get_closest(to: Node2D) -> Base:
 @onready var sprite: BaseSprite = %BaseSprite
 @onready var hp: Hp = %Hp
 @onready var hitbox: Hitbox = %Hitbox
-@onready var hitbox_shape: CollisionShape2D = %CollisionShape2D
 
 @export var config: BaseConfig
 
@@ -17,7 +16,7 @@ func get_hp_scale() -> float:
     return min(sprite.sprite.global_scale.y, sprite.sprite.global_scale.x)
 
 func get_radius() -> float:
-    return (config.radius if config else 32) * get_hp_scale()
+    return (config.orbit_radius if config else 32.0) * get_hp_scale()
     
 func _ready() -> void:
     add_to_group(Groups.base)
@@ -32,6 +31,5 @@ func _process(delta: float) -> void:
     sprite.health = hp.current / HP.sample(1.0)
     if config:
         sprite.sprite.texture = config.sprite
-        hitbox_shape.rotation = config.shape_rotation
-        hitbox_shape.shape = config.hitbox_shape
-        hitbox_shape.scale = Vector2.ONE * get_hp_scale()
+        hitbox.config = config.hitbox
+        hitbox.shape_scale = Vector2.ONE * get_hp_scale()

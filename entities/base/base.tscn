@@ -15,8 +15,8 @@ position = Vector2(0, 2)
 [node name="Hitbox" parent="." unique_id=1761563124 instance=ExtResource("3_0e5r6")]
 unique_name_in_owner = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=1388755615]
-unique_name_in_owner = true
-
 [node name="Hp" parent="." unique_id=1543573155 instance=ExtResource("3_6xdyk")]
 unique_name_in_owner = true
+
+[node name="AudioListener2D" type="AudioListener2D" parent="." unique_id=21564055]
+current = true
