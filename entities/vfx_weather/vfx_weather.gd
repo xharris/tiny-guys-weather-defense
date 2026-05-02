@@ -1,7 +1,7 @@
 extends Node2D
 class_name VfxWeather
 
-var _dev = Dev.new(true)
+var _dev = Dev.new()
 
 static var CYCLE_SPEED = preload("res://resources/curves/weather_cycle_speed.tres")
 static var CLOUD_SPEED = preload("res://resources/curves/cloud_speed.tres")
@@ -55,6 +55,10 @@ func add_cloud_shadow(pos: Vector2, tex: Texture2D = null) -> Shadow:
     var shadow: Shadow = Shadow.SCENE.instantiate()
     shadow.texture = tex
     shadow.global_position = pos
+    if _config:
+        # get varying width
+        var width = lerp(_config.cloud_width - _config.cloud_width_variance, _config.cloud_width + _config.cloud_width_variance, randf())
+        shadow.width = width
     cloud_shadows.add_child(shadow)
     return shadow
 
@@ -93,7 +97,6 @@ func _process(delta: float) -> void:
     for shadow: Shadow in cloud_shadows.get_children():
         # move shadow
         shadow.global_position.x -= delta * CLOUD_SPEED.sample(_config.wind if _config else 0.0)
-        
         # off screen, remove it
         if shadow.is_inside_tree() and shadow.global_position.x < cam_rect.position.x:
             _dev.dump("remove cloud")

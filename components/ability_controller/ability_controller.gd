@@ -1,7 +1,7 @@
 extends Node2D
 class_name AbilityController
 
-var _dev = Dev.new()
+var _dev = Dev.new(true)
 
 static var COOLDOWN = preload("res://resources/curves/ability_cooldown.tres")
 
@@ -28,6 +28,11 @@ func get_context() -> AbilityContext:
     var ctx = AbilityContext.new()
     ctx.ctrl = self
     return ctx
+
+## 1.0 means off cooldown
+func get_cooldown_progress(ability: Ability) -> float:
+    var duration = COOLDOWN.sample(ability.cooldown * (1 - cooldown_reduction))
+    return clampf(_cooldown.get(ability.name, 0.0) / duration, 0, 1)
 
 func use():
     var entities = get_tree().get_first_node_in_group(Groups.entities)
@@ -76,7 +81,7 @@ func use():
             else:
                 _dev.warn("no Entities")
 
-func _process(delta: float) -> void:
+func _process(delta: float) -> void:    
     for ability_name in _cooldown:
         var t = _cooldown.get(ability_name, 0.0)
         if t > 0:

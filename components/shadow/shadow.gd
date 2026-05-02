@@ -22,6 +22,12 @@ func sync(original: Shadow):
 func _ready() -> void:
     add_to_group(Groups.shadow)
 
+    if not Engine.is_editor_hint():
+        visible = _is_placeholder
+        sprite.modulate = Color.WHITE
+    else:
+        sprite.modulate = Color(0, 0, 0, 0.2)
+
 func _exit_tree() -> void:
     if _placeholder:
         _placeholder.queue_free()
@@ -41,9 +47,4 @@ func _process(delta: float) -> void:
     if _placeholder:
         # have placeholder mimic the original
         _placeholder.sync(self)
-    
-    if not Engine.is_editor_hint():
-        visible = _is_placeholder
-        sprite.modulate = Color.WHITE
-    else:
-        sprite.modulate = Color(0, 0, 0, 0.2)
+        visible = false

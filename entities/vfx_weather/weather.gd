@@ -9,6 +9,8 @@ enum TimeOfDay {SUNRISE, DAY, SUNSET, NIGHT}
 
 @export var cloud_texture: Array[Texture2D] = []
 @export var cloud_chance: float = 0.2
+@export var cloud_width: float = 76.0
+@export var cloud_width_variance: float = 16.0
 
 @export_range(0, 1, 0.05) var wind: float = 0.0
 

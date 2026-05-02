@@ -1,7 +1,7 @@
 extends Node2D
 class_name Player
 
-var _dev = Dev.new()
+var _dev = Dev.new(true)
 
 @onready var sprite: PlayerSprite = %PlayerSprite
 @onready var orbit_aim: OrbitAim = %OrbitAim
@@ -32,4 +32,5 @@ func _process(delta: float) -> void:
 
 func _unhandled_input(event: InputEvent) -> void:
     if event.is_action_pressed("primary"):
+        _dev.dump("use ability")
         ability_ctrl.use()

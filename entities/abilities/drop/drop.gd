@@ -48,16 +48,11 @@ func _on_hitbox_hit(target: Hitbox):
 
 func _on_remove_timer():
     _dev.dump("remove")
-    var parent = get_parent()
-    if not parent:
-        return
-    # reparent nodes so they dont get cut off
+    # detach audio so it keeps playing after this node is freed
     for player: AudioStreamPlayer2D in [audio_land, audio_on_hit]:
         if player.playing:
-            NodeUtil.move_up_in_tree(player)
-            player.finished.connect(player.queue_free)
-    NodeUtil.move_up_in_tree(particles)
-    parent.remove_child(self)
+            NodeUtil.detach_audio(self, player)
+    queue_free()
 
 func _process(delta: float) -> void:
     trail.config = config.trail

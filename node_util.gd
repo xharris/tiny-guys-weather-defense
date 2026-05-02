@@ -13,7 +13,7 @@ func get_closest(nodes: Array, to: Node2D) -> Node2D:
 func move_up_in_tree(node: Node):
     var parent = node.owner
     if not parent:
-        node.get_parent()
+        parent = node.get_parent()
     if parent:
         var grandparent = parent.get_parent()
         if grandparent:

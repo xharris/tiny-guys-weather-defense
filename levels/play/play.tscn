@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://b0xnjbp1lo42f" path="res://entities/tree/tree.tscn" id="2_bavt8"]
 [ext_resource type="PackedScene" uid="uid://2j8xbi4ok6vs" path="res://entities/vfx_weather/vfx_weather.tscn" id="2_f2ucs"]
 [ext_resource type="PackedScene" uid="uid://c4mrn0662oesy" path="res://entities/enemy_factory/enemy_factory.tscn" id="2_kiob8"]
+[ext_resource type="PackedScene" uid="uid://b3a742r626kaj" path="res://ui/hud/hud.tscn" id="2_stjo5"]
 [ext_resource type="PackedScene" uid="uid://bwbmv4jddck8m" path="res://entities/base/base.tscn" id="2_tpncu"]
 [ext_resource type="Script" uid="uid://bt268vevg8o0w" path="res://entities/vfx_weather/weather.gd" id="3_7cc4n"]
 [ext_resource type="PackedScene" uid="uid://b4v2slhf7k5g8" path="res://entities/player/player.tscn" id="3_avta7"]
@@ -27,10 +28,16 @@ fill_from = Vector2(0.5, 0.5)
 [node name="Play" type="Node2D" unique_id=1968432817]
 script = ExtResource("1_svcyk")
 
-[node name="UI" type="CanvasLayer" parent="." unique_id=2052831857]
+[node name="SpatialUI" type="CanvasLayer" parent="." unique_id=2052831857]
 unique_name_in_owner = true
 layer = 10
 follow_viewport_enabled = true
+
+[node name="NonDiageticUI" type="CanvasLayer" parent="." unique_id=481447605]
+unique_name_in_owner = true
+
+[node name="Hud" parent="NonDiageticUI" unique_id=692690408 instance=ExtResource("2_stjo5")]
+unique_name_in_owner = true
 
 [node name="VfxWeather" parent="." unique_id=854038026 node_paths=PackedStringArray("texture_rects") instance=ExtResource("2_f2ucs")]
 unique_name_in_owner = true
@@ -125,7 +132,7 @@ disabled = true
 [node name="StateMachine" parent="." unique_id=1767894804 node_paths=PackedStringArray("ui") instance=ExtResource("13_x4po3")]
 unique_name_in_owner = true
 current = ExtResource("9_bavt8")
-ui = NodePath("../UI")
+ui = NodePath("../SpatialUI")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=778679059]
 stream = ExtResource("8_me25x")

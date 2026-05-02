@@ -11,9 +11,11 @@ static var CAMERA_OFFSET = preload("res://resources/curves/camera_offset.tres")
 @onready var player: Player = %Player
 @onready var enemy_factory: EnemyFactory = %EnemyFactory
 @onready var entities: Node2D = %Entities
-@onready var ui: CanvasLayer = %UI
+@onready var ui: CanvasLayer = %SpatialUI
 @onready var states: StateMachine = %StateMachine
 @onready var weather: VfxWeather = %VfxWeather
+@onready var hud: Hud = %Hud
+@onready var ui_non_dia: CanvasLayer = %NonDiageticUI
 
 @export_range(0, 1, 0.1) var camera_offset: float = 0.0
 
@@ -57,3 +59,5 @@ func _on_enemy_factory_spawned(enemy: Enemy):
 
 func _process(delta: float) -> void:
     camera.global_position = base.global_position.move_toward(player.global_position, CAMERA_OFFSET.sample(camera_offset))
+    for a: Ability in player.ability_ctrl.abilities:
+        hud.set_ability_cooldown(a, player.ability_ctrl.get_cooldown_progress(a))
