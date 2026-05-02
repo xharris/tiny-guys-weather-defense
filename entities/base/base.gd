@@ -37,7 +37,6 @@ func _on_apply_on_hit(_source: Hitbox, on_hit: OnHitEffect):
     on_hit.apply_hp(hp)
 
 func _process(delta: float) -> void:
-    shadow.size = sprite.get_hp_scale().length() * 20
     sprite.health = hp.current / HP.sample(1.0)
     if config:
         sprite.sprite.texture = config.sprite

@@ -21,11 +21,11 @@ size = 1.0
 unique_name_in_owner = true
 crit_chance = 0.1
 
-[node name="Shadow" parent="." unique_id=563252791 instance=ExtResource("4_8fjmc")]
-size = 2.5
-
 [node name="Vfx" parent="." unique_id=1397666366 instance=ExtResource("5_8fjmc")]
 
 [node name="PlayerSprite" parent="Vfx" unique_id=589942968 instance=ExtResource("1_symyc")]
 unique_name_in_owner = true
 position = Vector2(0, -10)
+
+[node name="Shadow" parent="." unique_id=563252791 instance=ExtResource("4_8fjmc")]
+width = 16.0

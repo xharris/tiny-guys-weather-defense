@@ -1,7 +1,7 @@
 extends Node2D
 class_name EnemyFactory
 
-var _dev = Dev.new(true)
+var _dev = Dev.new()
 
 static var SPAWN_EVERY = preload("res://resources/curves/enemy_spawn_every.tres")
 static var SPAWN_LIMIT = preload("res://resources/curves/enemy_spawn_limit.tres")

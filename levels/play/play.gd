@@ -1,7 +1,7 @@
 extends Node2D
 class_name Play
 
-var _dev = Dev.new(true)
+var _dev = Dev.new()
 
 static var WAVES = preload("res://resources/curves/waves.tres")
 static var CAMERA_OFFSET = preload("res://resources/curves/camera_offset.tres")
@@ -13,6 +13,7 @@ static var CAMERA_OFFSET = preload("res://resources/curves/camera_offset.tres")
 @onready var entities: Node2D = %Entities
 @onready var ui: CanvasLayer = %UI
 @onready var states: StateMachine = %StateMachine
+@onready var weather: VfxWeather = %VfxWeather
 
 @export_range(0, 1, 0.1) var camera_offset: float = 0.0
 

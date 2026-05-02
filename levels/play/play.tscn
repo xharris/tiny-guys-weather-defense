@@ -2,11 +2,16 @@
 
 [ext_resource type="Script" uid="uid://qn751olbucor" path="res://levels/play/play.gd" id="1_svcyk"]
 [ext_resource type="PackedScene" uid="uid://b0xnjbp1lo42f" path="res://entities/tree/tree.tscn" id="2_bavt8"]
-[ext_resource type="PackedScene" uid="uid://cjqtjrm6yl1c5" path="res://components/cloud_sprite/cloud_sprite.tscn" id="2_f2ucs"]
+[ext_resource type="PackedScene" uid="uid://2j8xbi4ok6vs" path="res://entities/vfx_weather/vfx_weather.tscn" id="2_f2ucs"]
 [ext_resource type="PackedScene" uid="uid://c4mrn0662oesy" path="res://entities/enemy_factory/enemy_factory.tscn" id="2_kiob8"]
 [ext_resource type="PackedScene" uid="uid://bwbmv4jddck8m" path="res://entities/base/base.tscn" id="2_tpncu"]
+[ext_resource type="Script" uid="uid://bt268vevg8o0w" path="res://entities/vfx_weather/weather.gd" id="3_7cc4n"]
 [ext_resource type="PackedScene" uid="uid://b4v2slhf7k5g8" path="res://entities/player/player.tscn" id="3_avta7"]
+[ext_resource type="Resource" uid="uid://c31yrgl7ma66t" path="res://resources/weathers/sunrise.tres" id="4_stjo5"]
+[ext_resource type="Resource" uid="uid://crpuwu1j2nnuk" path="res://resources/weathers/day.tres" id="5_bcr1f"]
 [ext_resource type="Resource" uid="uid://h51ijtaoeb3p" path="res://resources/base_configs/cube.tres" id="6_bavt8"]
+[ext_resource type="Resource" uid="uid://co4gb6k1gsy7l" path="res://resources/weathers/sunset.tres" id="6_xq3e8"]
+[ext_resource type="Resource" uid="uid://2by8yepbsoke" path="res://resources/weathers/night.tres" id="7_742e6"]
 [ext_resource type="AudioStream" uid="uid://rk5bwbdka51p" path="res://resources/music/soundreality-spring-forest-nature-332842.mp3" id="8_me25x"]
 [ext_resource type="Resource" uid="uid://djqgs0ve6ehp7" path="res://resources/states/play_title_screen.tres" id="9_bavt8"]
 [ext_resource type="PackedScene" uid="uid://c3w0pmm7l0asa" path="res://components/state_machine/state_machine.tscn" id="13_x4po3"]
@@ -22,10 +27,20 @@ fill_from = Vector2(0.5, 0.5)
 [node name="Play" type="Node2D" unique_id=1968432817]
 script = ExtResource("1_svcyk")
 
-[node name="Bg" type="CanvasLayer" parent="." unique_id=2062887432]
+[node name="UI" type="CanvasLayer" parent="." unique_id=2052831857]
+unique_name_in_owner = true
+layer = 10
+follow_viewport_enabled = true
+
+[node name="VfxWeather" parent="." unique_id=854038026 node_paths=PackedStringArray("texture_rects") instance=ExtResource("2_f2ucs")]
+unique_name_in_owner = true
+texture_rects = [NodePath("Bg/TextureRect")]
+configs = Array[ExtResource("3_7cc4n")]([ExtResource("4_stjo5"), ExtResource("5_bcr1f"), ExtResource("6_xq3e8"), ExtResource("7_742e6")])
+
+[node name="Bg" type="CanvasLayer" parent="VfxWeather" unique_id=2062887432]
 layer = -1
 
-[node name="TextureRect" type="TextureRect" parent="Bg" unique_id=76608273]
+[node name="TextureRect" type="TextureRect" parent="VfxWeather/Bg" unique_id=76608273]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -33,76 +48,66 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("GradientTexture2D_f2ucs")
 
-[node name="UI" type="CanvasLayer" parent="." unique_id=2052831857]
-unique_name_in_owner = true
-layer = 10
-follow_viewport_enabled = true
-
-[node name="CloudSprite" parent="." unique_id=424814157 instance=ExtResource("2_f2ucs")]
-position = Vector2(48, 120)
-scale = Vector2(6, 6)
-
-[node name="CloudSprite2" parent="." unique_id=2106021681 instance=ExtResource("2_f2ucs")]
-position = Vector2(-120, -24)
-scale = Vector2(6, 6)
-
-[node name="Entities" type="Node2D" parent="." unique_id=274861770]
+[node name="Entities" type="Node2D" parent="VfxWeather" unique_id=666687283]
 unique_name_in_owner = true
 y_sort_enabled = true
 
-[node name="Tree" parent="Entities" unique_id=727259039 instance=ExtResource("2_bavt8")]
+[node name="Trees" type="Node2D" parent="VfxWeather/Entities" unique_id=451487214]
+y_sort_enabled = true
+
+[node name="Tree" parent="VfxWeather/Entities/Trees" unique_id=727259039 instance=ExtResource("2_bavt8")]
 position = Vector2(-268.99997, -97.99999)
 scale = Vector2(5, 5)
 
-[node name="Tree2" parent="Entities" unique_id=59718282 instance=ExtResource("2_bavt8")]
+[node name="Tree2" parent="VfxWeather/Entities/Trees" unique_id=59718282 instance=ExtResource("2_bavt8")]
 position = Vector2(-144.00003, -111)
 scale = Vector2(5, 5)
 
-[node name="Tree3" parent="Entities" unique_id=1176824797 instance=ExtResource("2_bavt8")]
+[node name="Tree3" parent="VfxWeather/Entities/Trees" unique_id=1176824797 instance=ExtResource("2_bavt8")]
 position = Vector2(-299.00003, 19)
 scale = Vector2(5, 5)
 
-[node name="Tree4" parent="Entities" unique_id=820016302 instance=ExtResource("2_bavt8")]
+[node name="Tree4" parent="VfxWeather/Entities/Trees" unique_id=820016302 instance=ExtResource("2_bavt8")]
 position = Vector2(-329, 155)
 scale = Vector2(5, 5)
 
-[node name="Tree5" parent="Entities" unique_id=1015511095 instance=ExtResource("2_bavt8")]
+[node name="Tree5" parent="VfxWeather/Entities/Trees" unique_id=1015511095 instance=ExtResource("2_bavt8")]
 position = Vector2(-30.00003, -131.99997)
 scale = Vector2(5, 5)
 
-[node name="Tree6" parent="Entities" unique_id=1033683256 instance=ExtResource("2_bavt8")]
+[node name="Tree6" parent="VfxWeather/Entities/Trees" unique_id=1033683256 instance=ExtResource("2_bavt8")]
 position = Vector2(243.99997, -93)
 scale = Vector2(5, 5)
 
-[node name="Tree7" parent="Entities" unique_id=1248408650 instance=ExtResource("2_bavt8")]
+[node name="Tree7" parent="VfxWeather/Entities/Trees" unique_id=1248408650 instance=ExtResource("2_bavt8")]
 position = Vector2(115.000015, -136)
 scale = Vector2(5, 5)
 
-[node name="Tree8" parent="Entities" unique_id=621350748 instance=ExtResource("2_bavt8")]
+[node name="Tree8" parent="VfxWeather/Entities/Trees" unique_id=621350748 instance=ExtResource("2_bavt8")]
 position = Vector2(276, 48.99997)
 scale = Vector2(5, 5)
 
-[node name="Tree9" parent="Entities" unique_id=1693373451 instance=ExtResource("2_bavt8")]
+[node name="Tree9" parent="VfxWeather/Entities/Trees" unique_id=1693373451 instance=ExtResource("2_bavt8")]
 position = Vector2(348.00003, 171)
 scale = Vector2(5, 5)
 
-[node name="Tree10" parent="Entities" unique_id=1784574683 instance=ExtResource("2_bavt8")]
+[node name="Tree10" parent="VfxWeather/Entities/Trees" unique_id=1784574683 instance=ExtResource("2_bavt8")]
 position = Vector2(157.00002, 329)
 scale = Vector2(5, 5)
 
-[node name="Tree11" parent="Entities" unique_id=1657117520 instance=ExtResource("2_bavt8")]
+[node name="Tree11" parent="VfxWeather/Entities/Trees" unique_id=1657117520 instance=ExtResource("2_bavt8")]
 position = Vector2(-153.99995, 347)
 scale = Vector2(5, 5)
 
-[node name="Tree12" parent="Entities" unique_id=387254097 instance=ExtResource("2_bavt8")]
+[node name="Tree12" parent="VfxWeather/Entities/Trees" unique_id=387254097 instance=ExtResource("2_bavt8")]
 position = Vector2(5.9999695, 373)
 scale = Vector2(5, 5)
 
-[node name="Base" parent="Entities" unique_id=1595243073 instance=ExtResource("2_tpncu")]
+[node name="Base" parent="VfxWeather/Entities" unique_id=1595243073 instance=ExtResource("2_tpncu")]
 unique_name_in_owner = true
 config = ExtResource("6_bavt8")
 
-[node name="Player" parent="Entities" unique_id=980467936 node_paths=PackedStringArray("base") instance=ExtResource("3_avta7")]
+[node name="Player" parent="VfxWeather/Entities" unique_id=980467936 node_paths=PackedStringArray("base") instance=ExtResource("3_avta7")]
 unique_name_in_owner = true
 base = NodePath("../Base")
 

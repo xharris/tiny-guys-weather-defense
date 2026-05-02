@@ -3,8 +3,6 @@ class_name AbilityLine
 
 enum ParticlesPosition {END, START}
 
-@export var cloud: CloudSpriteConfig
-
 @export_group("Line", "line")
 @export var line_texture: Texture2D
 @export var line_color: Color

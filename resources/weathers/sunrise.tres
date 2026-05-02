@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="Weather" format=3 uid="uid://c31yrgl7ma66t"]
+
+[ext_resource type="Script" uid="uid://bqaqexhg3xm6e" path="res://components/cloud_sprite/cloud_sprite_config.gd" id="1_1j1oc"]
+[ext_resource type="Script" uid="uid://bt268vevg8o0w" path="res://entities/vfx_weather/weather.gd" id="2_bbnr4"]
+
+[resource]
+script = ExtResource("2_bbnr4")
+metadata/_custom_type_script = "uid://bt268vevg8o0w"

@@ -1,8 +1,0 @@
-[gd_resource type="Resource" script_class="CloudSpriteConfig" format=3 uid="uid://c45ds64o7gc1e"]
-
-[ext_resource type="Script" uid="uid://bqaqexhg3xm6e" path="res://components/cloud_sprite/cloud_sprite_config.gd" id="1_k6g4m"]
-
-[resource]
-script = ExtResource("1_k6g4m")
-size = 4.0
-metadata/_custom_type_script = "uid://bqaqexhg3xm6e"

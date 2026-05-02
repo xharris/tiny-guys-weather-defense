@@ -23,7 +23,6 @@ Abilities="*uid://ro01syj7lj8g"
 
 [display]
 
-window/size/mode=2
 window/stretch/mode="viewport"
 
 [input]
@@ -53,3 +52,4 @@ debug_primary={
 textures/canvas_textures/default_texture_filter=0
 rendering_device/driver.windows="d3d12"
 textures/vram_compression/import_etc2_astc=true
+viewport/hdr_2d=true

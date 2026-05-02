@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://2j8xbi4ok6vs"]
+
+[ext_resource type="Script" uid="uid://b2eqxssxbrb87" path="res://entities/vfx_weather/vfx_weather.gd" id="1_17w0f"]
+[ext_resource type="PackedScene" uid="uid://c3w0pmm7l0asa" path="res://components/state_machine/state_machine.tscn" id="2_c2cp8"]
+[ext_resource type="PackedScene" uid="uid://c2aoqiuo4ojd8" path="res://components/shadow/shadow_manager.tscn" id="3_aij8x"]
+
+[node name="VfxWeather" type="Node2D" unique_id=854038026]
+script = ExtResource("1_17w0f")
+
+[node name="StateMachine" parent="." unique_id=1767894804 instance=ExtResource("2_c2cp8")]
+unique_name_in_owner = true
+
+[node name="CloudTimer" type="Timer" parent="." unique_id=467820626]
+unique_name_in_owner = true
+autostart = true
+
+[node name="ShadowManager" parent="." unique_id=1904395534 instance=ExtResource("3_aij8x")]
+
+[node name="CloudShadows" type="Node2D" parent="." unique_id=899520039]
+unique_name_in_owner = true

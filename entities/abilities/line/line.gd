@@ -12,7 +12,6 @@ static var SCENE = preload("res://entities/abilities/line/line.tscn")
 @onready var hitbox_timer: Timer = %HitboxTimer
 @onready var audio_on_hit: AudioStreamPlayer2D = %AudioOnHit
 @onready var particles: GPUParticles2D = %GPUParticles2D
-@onready var cloud_sprite: CloudSprite = %CloudSprite
 
 var ctx: AbilityContext
 var _fade: float = 1.0
@@ -45,10 +44,8 @@ func _ready() -> void:
     particles.emitting = false
     match config.particles_position:
         AbilityLine.ParticlesPosition.START:
-            remove_child(cloud_sprite)
             particles.global_position = start_position
         AbilityLine.ParticlesPosition.END:
-            cloud_sprite.global_position = target_position
             particles.global_position = target_position
             
     particles.texture = config.particles_texture
@@ -58,21 +55,16 @@ func _ready() -> void:
         particles.emit_particle(
             Transform2D.IDENTITY.translated(particles.global_position), 
             Vector2.ZERO, Color.WHITE, Color.WHITE, 0)
-    
-    cloud_sprite.config = config.cloud
-    cloud_sprite.dismiss()
         
 func _on_hitbox_timeout():
     _dev.dump("disable hitbox")
     hitbox.disabled = true
-    NodeUtil.move_up_in_tree(cloud_sprite)
 
 func _process(delta: float) -> void:
     if _fade > 0:
         _fade -= delta
     else:
         # done, remove self
-        NodeUtil.move_up_in_tree(cloud_sprite)
         var parent = get_parent()
         if parent:
             parent.remove_child(self)

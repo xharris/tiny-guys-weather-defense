@@ -11,11 +11,9 @@
 [ext_resource type="Resource" uid="uid://dqce8sia86ro8" path="res://resources/ability_can_picks/has_non_crit_ability.tres" id="4_abj7o"]
 [ext_resource type="Material" uid="uid://fr7pfa0wefxr" path="res://resources/abilities/lightning_strike/lightning_strike_particles.tres" id="6_oedkf"]
 [ext_resource type="Texture2D" uid="uid://dw1bji3w8phku" path="res://resources/abilities/raindrop/orb.png" id="7_2lu4x"]
-[ext_resource type="Resource" uid="uid://c45ds64o7gc1e" path="res://resources/abilities/lightning_strike/lightning_strike_cloud.tres" id="8_cloud"]
 
 [resource]
 script = ExtResource("2_v38pd")
-cloud = ExtResource("8_cloud")
 line_texture = ExtResource("1_pt310")
 line_color = Color(0.73333335, 0.87058824, 0.9843137, 1)
 hitbox = ExtResource("1_v38pd")

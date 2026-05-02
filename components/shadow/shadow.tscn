@@ -1,15 +1,12 @@
 [gd_scene format=3 uid="uid://bkfwwx5v63cyq"]
 
-[ext_resource type="Texture2D" uid="uid://dw1bji3w8phku" path="res://resources/abilities/raindrop/orb.png" id="1_3wud3"]
 [ext_resource type="Script" uid="uid://br0uf15imurcb" path="res://components/shadow/shadow.gd" id="1_fo1f2"]
+[ext_resource type="Texture2D" uid="uid://b83l7pj6mpmk5" path="res://components/shadow/filled_circle_64.png" id="2_fo1f2"]
 
 [node name="Shadow" type="Node2D" unique_id=563252791]
-z_index = -1
-z_as_relative = false
 script = ExtResource("1_fo1f2")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1788590652]
 unique_name_in_owner = true
-modulate = Color(0, 0, 0, 0.20392157)
 scale = Vector2(1, 0.5)
-texture = ExtResource("1_3wud3")
+texture = ExtResource("2_fo1f2")

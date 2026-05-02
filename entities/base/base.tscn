@@ -21,6 +21,7 @@ position = Vector2(0, 2)
 [node name="Shadow" parent="Vfx" unique_id=563252791 instance=ExtResource("4_6ljr3")]
 unique_name_in_owner = true
 position = Vector2(0, 2)
+width = 18.0
 
 [node name="Hitbox" parent="." unique_id=1761563124 instance=ExtResource("3_0e5r6")]
 unique_name_in_owner = true

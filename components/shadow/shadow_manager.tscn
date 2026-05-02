@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://c2aoqiuo4ojd8"]
+
+[ext_resource type="Script" uid="uid://ckv508ia25iaf" path="res://components/shadow/shadow_manager.gd" id="1_tkis2"]
+
+[node name="ShadowManager" type="Node2D" unique_id=1904395534]
+script = ExtResource("1_tkis2")
+
+[node name="CanvasGroup" type="CanvasGroup" parent="." unique_id=1656057230]
+unique_name_in_owner = true

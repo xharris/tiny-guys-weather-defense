@@ -1,9 +1,9 @@
 extends Node2D
 class_name AbilityController
 
-static var COOLDOWN = preload("res://resources/curves/ability_cooldown.tres")
+var _dev = Dev.new()
 
-var _dev = Dev.new(true)
+static var COOLDOWN = preload("res://resources/curves/ability_cooldown.tres")
 
 @export var abilities: Array[Ability] = []
 @export var crit_chance: float = 0.0:

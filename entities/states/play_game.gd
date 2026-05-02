@@ -90,6 +90,7 @@ func _exit(me: StateMachine):
     var owner: Play = me.owner
     if not owner:
         return
+    owner.weather.playing = false
     owner.enemy_factory.disabled = true
     owner.enemy_factory.wave_finished.disconnect(_pick_wave.bind(me))
     owner.enemy_factory.spawned.disconnect(_on_enemy_spawned.bind(me))
@@ -100,6 +101,8 @@ func _enter(me: StateMachine):
     if not owner:
         return
     var metadata = Metadata.get_data(me)
+    owner.weather.playing = true
+    owner.weather.set_time_of_day(Weather.TimeOfDay.DAY)
     owner.enemy_factory.wave_finished.connect(_pick_wave.bind(me), CONNECT_DEFERRED)
     owner.enemy_factory.spawned.connect(_on_enemy_spawned.bind(me), CONNECT_DEFERRED)
     owner.base.hp.died.connect(_on_base_died.bind(me))

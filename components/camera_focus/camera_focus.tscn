@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://31uv67fqb6yu"]
+
+[ext_resource type="Script" uid="uid://dp42g7hmwwkp2" path="res://components/camera_focus/camera_focus.gd" id="1_t8po5"]
+
+[node name="CameraFocus" type="Node2D" unique_id=854274705]
+script = ExtResource("1_t8po5")
