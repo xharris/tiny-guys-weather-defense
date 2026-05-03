@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="ThemeColors" format=3 uid="uid://vqn7qx38j1kl"]
+
+[ext_resource type="Script" uid="uid://q8ewch2ka3b7" path="res://ui/theme_colors.gd" id="1_va0ss"]
+
+[resource]
+script = ExtResource("1_va0ss")
+base_100 = Color(0.23137255, 0.18431373, 0.56078434, 1)
+base_200 = Color(0.16470589, 0.15294118, 0.4, 1)
+base_300 = Color(0.1254902, 0.11372549, 0.3019608, 1)
+base_content = Color(0.8117647, 0.84705883, 1, 1)
+primary = Color(0.43529412, 0.83137256, 0.9019608, 1)
+primary_content = Color(0.16470589, 0.35686275, 0.4, 1)
+secondary = Color(0.60784316, 0.34901962, 0.7137255, 1)
+secondary_content = Color(0.9607843, 0.9137255, 1, 1)
+accent = Color(0.9490196, 0.8980392, 0.5411765, 1)
+accent_content = Color(0.16470589, 0.16470589, 0.07058824, 1)
+neutral = Color(0.18431373, 0.14901961, 0.47843137, 1)
+neutral_content = Color(0.7764706, 0.7254902, 1, 1)
+metadata/_custom_type_script = "uid://q8ewch2ka3b7"

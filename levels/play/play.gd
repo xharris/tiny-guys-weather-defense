@@ -59,5 +59,4 @@ func _on_enemy_factory_spawned(enemy: Enemy):
 
 func _process(delta: float) -> void:
     camera.global_position = base.global_position.move_toward(player.global_position, CAMERA_OFFSET.sample(camera_offset))
-    for a: Ability in player.ability_ctrl.abilities:
-        hud.set_ability_cooldown(a, player.ability_ctrl.get_cooldown_progress(a))
+    hud.ability_ctrl = player.ability_ctrl

@@ -2,10 +2,10 @@
 
 ## TODO
 
-- [ ] HUD UI
-    - [ ] Abilities
-    - [ ] Cooldowns
-    - [ ] Crit chance
+- [x] HUD UI
+    - [x] Abilities
+    - [x] Cooldowns
+    - [x] Stats (ie. Crit chance)
 - [ ] Pause UI
     - [ ] Open with 'P' or 'Esc'
     - [ ] Adjust volume

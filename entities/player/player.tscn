@@ -19,7 +19,6 @@ size = 1.0
 
 [node name="AbilityController" parent="." unique_id=62650995 instance=ExtResource("4_bls4j")]
 unique_name_in_owner = true
-crit_chance = 0.1
 
 [node name="Vfx" parent="." unique_id=1397666366 instance=ExtResource("5_8fjmc")]
 

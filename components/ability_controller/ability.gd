@@ -20,7 +20,6 @@ enum Step {ACTIVE, CALC_STATS, POST_PASSIVE}
 
 @export_group("UI")
 @export var icon: Texture2D
-@export var color: Color = Color.html("#64B5F6")
 
 ## Can return Node2D that will be added to the Entities node
 func use(ctx: AbilityContext) -> Array[Node2D]:

@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://b3a742r626kaj"]
 
+[ext_resource type="Theme" uid="uid://b8ilvneqmf4wc" path="res://ui/hud/hud_theme.tres" id="1_4d6w6"]
 [ext_resource type="Script" uid="uid://ceeyh76ypftfg" path="res://ui/hud/hud.gd" id="1_xmswo"]
 
 [node name="Hud" type="Control" unique_id=692690408]
@@ -10,6 +11,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+theme = ExtResource("1_4d6w6")
 script = ExtResource("1_xmswo")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=407665646]
@@ -32,6 +34,13 @@ theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="Abilities" type="HBoxContainer" parent="VBoxContainer/MarginContainer" unique_id=1842015066]
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer" unique_id=1984021162]
+layout_mode = 2
+
+[node name="Stats" type="HBoxContainer" parent="VBoxContainer/MarginContainer/VBoxContainer" unique_id=24357395]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Abilities" type="HBoxContainer" parent="VBoxContainer/MarginContainer/VBoxContainer" unique_id=1842015066]
 unique_name_in_owner = true
 layout_mode = 2

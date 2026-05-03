@@ -1,0 +1,6 @@
+[gd_resource type="FontVariation" format=3 uid="uid://b2y8nggr7ukeg"]
+
+[ext_resource type="FontFile" uid="uid://b12xjsqdjpyd0" path="res://resources/fonts/Basenji-SemiBold.otf" id="1_ths2y"]
+
+[resource]
+base_font = ExtResource("1_ths2y")

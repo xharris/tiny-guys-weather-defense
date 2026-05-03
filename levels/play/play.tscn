@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://bwbmv4jddck8m" path="res://entities/base/base.tscn" id="2_tpncu"]
 [ext_resource type="Script" uid="uid://bt268vevg8o0w" path="res://entities/vfx_weather/weather.gd" id="3_7cc4n"]
 [ext_resource type="PackedScene" uid="uid://b4v2slhf7k5g8" path="res://entities/player/player.tscn" id="3_avta7"]
+[ext_resource type="Resource" uid="uid://vqn7qx38j1kl" path="res://resources/theme_colors/aqua.tres" id="3_wksjx"]
 [ext_resource type="Resource" uid="uid://c31yrgl7ma66t" path="res://resources/weathers/sunrise.tres" id="4_stjo5"]
 [ext_resource type="Resource" uid="uid://crpuwu1j2nnuk" path="res://resources/weathers/day.tres" id="5_bcr1f"]
 [ext_resource type="Resource" uid="uid://h51ijtaoeb3p" path="res://resources/base_configs/cube.tres" id="6_bavt8"]
@@ -38,6 +39,7 @@ unique_name_in_owner = true
 
 [node name="Hud" parent="NonDiageticUI" unique_id=692690408 instance=ExtResource("2_stjo5")]
 unique_name_in_owner = true
+colors = ExtResource("3_wksjx")
 
 [node name="VfxWeather" parent="." unique_id=854038026 node_paths=PackedStringArray("texture_rects") instance=ExtResource("2_f2ucs")]
 unique_name_in_owner = true
