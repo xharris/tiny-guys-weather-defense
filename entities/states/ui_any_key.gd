@@ -18,7 +18,7 @@ func _exit(me: StateMachine):
 
 func _unhandled_input(me: StateMachine, event: InputEvent) -> void:
     # move to next state when any key pressed
-    if event.is_action_type() and event.is_pressed():
+    if event.is_action_type() and event.is_pressed() and not (event.is_action("pause") or event.is_action("exit")):
         _dev.dump("any key pressed")
         var next_state: State = load(on_any_key)
         me.switch(next_state)

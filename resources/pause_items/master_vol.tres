@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="PauseItemConfig" format=3 uid="uid://b65bgogtqpty3"]
+
+[ext_resource type="Script" uid="uid://cs614okjhkrkh" path="res://ui/pause/pause_item_config.gd" id="1_co2tk"]
+
+[resource]
+script = ExtResource("1_co2tk")
+label = "Master"
+group = "Volume"
+setting_key = "master-volume"
+slider_enabled = true
+slider_tick_count = 10
+metadata/_custom_type_script = "uid://cs614okjhkrkh"

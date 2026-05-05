@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://dtt8uu55i1obo"]
+
+[ext_resource type="Theme" uid="uid://bspckbt5jkupc" path="res://ui/pause/pause_theme.tres" id="1_b7yxa"]
+[ext_resource type="Script" uid="uid://qwl2jbug3kns" path="res://ui/pause/pause.gd" id="1_x1pg1"]
+
+[node name="Pause" type="Control" unique_id=761146018]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_b7yxa")
+script = ExtResource("1_x1pg1")
+
+[node name="Panel" type="Panel" parent="." unique_id=1959076548]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=765992714]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=316386124]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1377039309]
+layout_mode = 2
+text = "Pause"
+
+[node name="Items" type="VBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=128013224]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Exit" type="Label" parent="MarginContainer/VBoxContainer" unique_id=268151503]
+layout_mode = 2
+text = "[Esc] or [P] to exit"

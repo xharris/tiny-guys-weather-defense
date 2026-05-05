@@ -1,0 +1,7 @@
+[gd_resource type="Theme" format=3 uid="uid://bspckbt5jkupc"]
+
+[ext_resource type="FontFile" uid="uid://b12xjsqdjpyd0" path="res://resources/fonts/Basenji-SemiBold.otf" id="1_isq06"]
+
+[resource]
+Label/font_sizes/font_size = 32
+Label/fonts/font = ExtResource("1_isq06")

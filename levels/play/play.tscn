@@ -10,8 +10,11 @@
 [ext_resource type="PackedScene" uid="uid://b4v2slhf7k5g8" path="res://entities/player/player.tscn" id="3_avta7"]
 [ext_resource type="Resource" uid="uid://vqn7qx38j1kl" path="res://resources/theme_colors/aqua.tres" id="3_wksjx"]
 [ext_resource type="Resource" uid="uid://c31yrgl7ma66t" path="res://resources/weathers/sunrise.tres" id="4_stjo5"]
+[ext_resource type="PackedScene" uid="uid://dtt8uu55i1obo" path="res://ui/pause/pause.tscn" id="4_xq3e8"]
 [ext_resource type="Resource" uid="uid://crpuwu1j2nnuk" path="res://resources/weathers/day.tres" id="5_bcr1f"]
+[ext_resource type="Script" uid="uid://cs614okjhkrkh" path="res://ui/pause/pause_item_config.gd" id="5_wksjx"]
 [ext_resource type="Resource" uid="uid://h51ijtaoeb3p" path="res://resources/base_configs/cube.tres" id="6_bavt8"]
+[ext_resource type="Resource" uid="uid://b65bgogtqpty3" path="res://resources/pause_items/master_vol.tres" id="6_do7n8"]
 [ext_resource type="Resource" uid="uid://co4gb6k1gsy7l" path="res://resources/weathers/sunset.tres" id="6_xq3e8"]
 [ext_resource type="Resource" uid="uid://2by8yepbsoke" path="res://resources/weathers/night.tres" id="7_742e6"]
 [ext_resource type="AudioStream" uid="uid://rk5bwbdka51p" path="res://resources/music/soundreality-spring-forest-nature-332842.mp3" id="8_me25x"]
@@ -36,10 +39,15 @@ follow_viewport_enabled = true
 
 [node name="NonDiageticUI" type="CanvasLayer" parent="." unique_id=481447605]
 unique_name_in_owner = true
+layer = 20
 
 [node name="Hud" parent="NonDiageticUI" unique_id=692690408 instance=ExtResource("2_stjo5")]
 unique_name_in_owner = true
 colors = ExtResource("3_wksjx")
+
+[node name="Pause" parent="NonDiageticUI" unique_id=761146018 instance=ExtResource("4_xq3e8")]
+unique_name_in_owner = true
+items = Array[ExtResource("5_wksjx")]([ExtResource("6_do7n8")])
 
 [node name="VfxWeather" parent="." unique_id=854038026 node_paths=PackedStringArray("texture_rects") instance=ExtResource("2_f2ucs")]
 unique_name_in_owner = true
