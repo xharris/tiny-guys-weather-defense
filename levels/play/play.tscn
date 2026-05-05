@@ -16,7 +16,9 @@
 [ext_resource type="Resource" uid="uid://h51ijtaoeb3p" path="res://resources/base_configs/cube.tres" id="6_bavt8"]
 [ext_resource type="Resource" uid="uid://b65bgogtqpty3" path="res://resources/pause_items/master_vol.tres" id="6_do7n8"]
 [ext_resource type="Resource" uid="uid://co4gb6k1gsy7l" path="res://resources/weathers/sunset.tres" id="6_xq3e8"]
+[ext_resource type="Resource" uid="uid://b30vwna6y8vvw" path="res://resources/pause_items/sfx_vol.tres" id="7_484km"]
 [ext_resource type="Resource" uid="uid://2by8yepbsoke" path="res://resources/weathers/night.tres" id="7_742e6"]
+[ext_resource type="Resource" uid="uid://dd2rci8sit2vd" path="res://resources/pause_items/music_vol.tres" id="8_0gck6"]
 [ext_resource type="AudioStream" uid="uid://rk5bwbdka51p" path="res://resources/music/soundreality-spring-forest-nature-332842.mp3" id="8_me25x"]
 [ext_resource type="Resource" uid="uid://djqgs0ve6ehp7" path="res://resources/states/play_title_screen.tres" id="9_bavt8"]
 [ext_resource type="PackedScene" uid="uid://c3w0pmm7l0asa" path="res://components/state_machine/state_machine.tscn" id="13_x4po3"]
@@ -47,7 +49,7 @@ colors = ExtResource("3_wksjx")
 
 [node name="Pause" parent="NonDiageticUI" unique_id=761146018 instance=ExtResource("4_xq3e8")]
 unique_name_in_owner = true
-items = Array[ExtResource("5_wksjx")]([ExtResource("6_do7n8")])
+items = Array[ExtResource("5_wksjx")]([ExtResource("6_do7n8"), ExtResource("8_0gck6"), ExtResource("7_484km")])
 
 [node name="VfxWeather" parent="." unique_id=854038026 node_paths=PackedStringArray("texture_rects") instance=ExtResource("2_f2ucs")]
 unique_name_in_owner = true

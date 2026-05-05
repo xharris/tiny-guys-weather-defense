@@ -8,5 +8,5 @@ label = "Master"
 group = "Volume"
 setting_key = "master-volume"
 slider_enabled = true
-slider_tick_count = 10
+slider_default_value = 1.0
 metadata/_custom_type_script = "uid://cs614okjhkrkh"

@@ -5,9 +5,8 @@ class_name PauseItemConfig
 @export var group: String
 
 @export var setting_key: String
-@export var setting_default_value: Variant
 
 @export_group("Slider", "slider")
 @export var slider_enabled: bool
-@export var slider_curve: Curve
-@export var slider_steps: int = 4
+@export var slider_default_value: float
+@export var slider_steps: int = 5

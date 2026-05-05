@@ -1,6 +1,8 @@
 extends Control
 class_name PauseItem
 
+var _dev = Dev.new(true)
+
 static var SCENE = preload("res://ui/pause/pause_item.tscn")
 
 @onready var label: Label = %Label
@@ -10,10 +12,7 @@ static var SCENE = preload("res://ui/pause/pause_item.tscn")
 
 func _on_slider_changed(value: float):
     if config and config.slider_enabled:
-        var setting_value = value
-        if config.slider_curve:
-            setting_value = config.slider_curve.sample(value / 100.0)
-        Settings.set_setting(config.setting_key, setting_value)
+        Settings.set_setting(config.setting_key, value / 100.0)
 
 func _process(delta: float) -> void:
     label.text = config.label
@@ -24,10 +23,9 @@ func _ready() -> void:
         slider.min_value = 0
         slider.max_value = 100
         slider.step = 100.0 / config.slider_steps
-        slider.tick_count = config.slider_steps + 1
+        slider.tick_count = config.slider_steps
         # set initial value
-        var default: float = 0
-        if config.setting_default_value != null:
-            default = config.setting_default_value
-        slider.value = Settings.get_setting(config.setting_key, default)
+        var value = Settings.get_setting(config.setting_key, config.slider_default_value)
+        slider.value = value * 100.0
+        _dev.dump("set initial slider value: {0}={1} ({2})", [config.setting_key, slider.value, value])
     slider.value_changed.connect(_on_slider_changed)
