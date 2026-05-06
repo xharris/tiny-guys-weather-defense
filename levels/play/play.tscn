@@ -20,6 +20,7 @@
 [ext_resource type="Resource" uid="uid://2by8yepbsoke" path="res://resources/weathers/night.tres" id="7_742e6"]
 [ext_resource type="Resource" uid="uid://dd2rci8sit2vd" path="res://resources/pause_items/music_vol.tres" id="8_0gck6"]
 [ext_resource type="AudioStream" uid="uid://rk5bwbdka51p" path="res://resources/music/soundreality-spring-forest-nature-332842.mp3" id="8_me25x"]
+[ext_resource type="PackedScene" uid="uid://dwllh2tt6mcgx" path="res://components/audio_controller/audio_controller.tscn" id="9_0gck6"]
 [ext_resource type="Resource" uid="uid://djqgs0ve6ehp7" path="res://resources/states/play_title_screen.tres" id="9_bavt8"]
 [ext_resource type="PackedScene" uid="uid://c3w0pmm7l0asa" path="res://components/state_machine/state_machine.tscn" id="13_x4po3"]
 
@@ -50,6 +51,8 @@ colors = ExtResource("3_wksjx")
 [node name="Pause" parent="NonDiageticUI" unique_id=761146018 instance=ExtResource("4_xq3e8")]
 unique_name_in_owner = true
 items = Array[ExtResource("5_wksjx")]([ExtResource("6_do7n8"), ExtResource("8_0gck6"), ExtResource("7_484km")])
+
+[node name="AudioController" parent="." unique_id=1518854675 instance=ExtResource("9_0gck6")]
 
 [node name="VfxWeather" parent="." unique_id=854038026 node_paths=PackedStringArray("texture_rects") instance=ExtResource("2_f2ucs")]
 unique_name_in_owner = true

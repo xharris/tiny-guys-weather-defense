@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="AudioConfig" format=3 uid="uid://bhtelhh3swtla"]
+
+[ext_resource type="Script" uid="uid://bg80dryvx7ftu" path="res://components/audio_controller/audio_config.gd" id="1_25vlg"]
+[ext_resource type="AudioStream" uid="uid://c2a7fos58yx5" path="res://resources/audio_configs/ahmed_abdulaal-laser-312360.mp3" id="2_xamyf"]
+
+[resource]
+script = ExtResource("1_25vlg")
+name = "raindrop land"
+stream = ExtResource("2_xamyf")
+metadata/_custom_type_script = "uid://bg80dryvx7ftu"

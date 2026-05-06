@@ -23,3 +23,11 @@ func move_up_in_tree(node: Node):
 func detach_audio(node_owner: Node, node: AudioStreamPlayer2D):
     node.reparent(node_owner.get_parent())
     node.finished.connect(node.queue_free)
+
+func find_parent_by_cls(child: Node, type: Variant) -> Node:
+    var parent = child.get_parent()
+    while parent and not is_instance_of(parent, type):
+        parent = child.get_parent()
+    if not is_instance_of(parent, type):
+        return null
+    return parent

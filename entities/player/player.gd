@@ -1,7 +1,7 @@
 extends Node2D
 class_name Player
 
-var _dev = Dev.new(true)
+var _dev = Dev.new()
 
 @onready var sprite: PlayerSprite = %PlayerSprite
 @onready var orbit_aim: OrbitAim = %OrbitAim

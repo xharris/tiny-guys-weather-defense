@@ -10,8 +10,9 @@ class_name AbilityDrop
 @export var remove_wait_time: float = 0.1
 @export var hitbox: HitboxConfig
 
-@export var land_audio: AudioStream
-@export var on_hit_audio: AudioStream
+@export_group("Audio", "audio")
+@export var audio_on_land: AudioConfig
+@export var audio_on_hit: AudioConfig
 
 @export_group("Particles", "particles_")
 @export var particles_amount: int = 8

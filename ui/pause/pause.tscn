@@ -47,4 +47,4 @@ layout_mode = 2
 
 [node name="Exit" type="Label" parent="MarginContainer/VBoxContainer" unique_id=268151503]
 layout_mode = 2
-text = "[Esc] or [P] to exit"
+text = "[Esc] to exit, [P] to unpause"

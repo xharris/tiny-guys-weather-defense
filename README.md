@@ -7,7 +7,7 @@
     - [x] Cooldowns
     - [x] Stats (ie. Crit chance)
 - [ ] Pause UI
-    - [ ] Open with 'P' or 'Esc'
+    - [x] Open with 'P' or 'Esc'
     - [ ] Adjust volume
         - [ ] Master
         - [ ] Music
@@ -19,7 +19,7 @@
         - Ants
             - [ ] Only plays once
             - [ ] Position should be average position of all ants?
-    - [ ] Forest audio effects (ie. reverb)
+    - [ ] Forest audio effects? (ie. reverb)
 - [ ] Abilities
     - [ ] Chance to repeat active ability on nearby target
     - [ ] Update raindrop vfx

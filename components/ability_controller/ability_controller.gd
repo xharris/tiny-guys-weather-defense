@@ -1,7 +1,7 @@
 extends Node2D
 class_name AbilityController
 
-var _dev = Dev.new(true)
+var _dev = Dev.new()
 
 static var COOLDOWN = preload("res://resources/curves/ability_cooldown.tres")
 

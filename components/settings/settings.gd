@@ -4,6 +4,8 @@ var _dev = Dev.new(true)
 
 const SAVE_PATH: String = "user://settings.json"
 
+signal saved
+
 var _data: Dictionary
 var _changed: bool
 
@@ -20,6 +22,7 @@ func _save():
     f.store_line(JSON.stringify(_data))
     _changed = false
     _dev.dump("save to {0}", [ProjectSettings.globalize_path(SAVE_PATH)])
+    saved.emit()
 
 func _load():
     if not FileAccess.file_exists(SAVE_PATH):

@@ -12,8 +12,8 @@ static var FALL_SPEED_CURVE = preload("res://resources/curves/fall_from_top_spee
 @onready var sprite: Sprite2D = %Sprite2D
 @onready var trail: Trail = %Trail
 @onready var particles: GPUParticles2D = %GPUParticles2D
-@onready var audio_on_hit: AudioStreamPlayer2D = %AudioOnHit
-@onready var audio_land: AudioStreamPlayer2D = %AudioLand
+
+@onready var audio: AudioController = %AudioController
 
 var config: AbilityDrop
 var ctx: AbilityContext
@@ -29,8 +29,6 @@ func _ready() -> void:
     remove_timer.timeout.connect(_on_remove_timer)
     sprite.texture = config.sprite
     hitbox.on_hit_effects = config.on_hit_effects
-    audio_land.stream = config.land_audio
-    audio_on_hit.stream = config.on_hit_audio
 
     if not sprite.texture:
         _dev.warn("no sprite texture provided in {0}", [config.resource_path.get_file()])
@@ -44,14 +42,10 @@ func _ready() -> void:
     _dev.dump("mouse {2}, start {0}, target {1}", [start_position, target_position, get_global_mouse_position()])
         
 func _on_hitbox_hit(target: Hitbox):
-    audio_on_hit.play()
+    audio.play(config.audio_on_hit)
 
 func _on_remove_timer():
     _dev.dump("remove")
-    # detach audio so it keeps playing after this node is freed
-    for player: AudioStreamPlayer2D in [audio_land, audio_on_hit]:
-        if player.playing:
-            NodeUtil.detach_audio(self, player)
     queue_free()
 
 func _process(delta: float) -> void:
@@ -72,7 +66,7 @@ func _process(delta: float) -> void:
         particles.amount = config.particles_amount
         for i in config.particles_amount:
             particles.emit_particle(Transform2D.IDENTITY, Vector2.ZERO, Color.WHITE, Color.WHITE, 0)
-        audio_land.play()
+        audio.play(config.audio_on_land)
         
         # enable hitbox when ground reached
         _dev.dump("arrived at target")

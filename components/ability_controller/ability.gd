@@ -18,6 +18,10 @@ enum Step {ACTIVE, CALC_STATS, POST_PASSIVE}
 @export var step: Step
 @export var can_pick: Array[AbilityCanPick]
 
+@export_group("Audio", "audio")
+@export var on_hit_audio: AudioConfig
+@export var on_land_audio: AudioConfig
+
 @export_group("UI")
 @export var icon: Texture2D
 

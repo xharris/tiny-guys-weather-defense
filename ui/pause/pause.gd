@@ -4,6 +4,7 @@ class_name UiPause
 @onready var _items: VBoxContainer = %Items
 
 @export var items: Array[PauseItemConfig]
+
 var _is_paused: bool
 
 func pause():
@@ -36,7 +37,7 @@ func _unhandled_input(event: InputEvent) -> void:
         # TODO confirm
         get_tree().quit()
 
-    elif event.is_action_pressed("pause"):
+    elif event.is_action_pressed("pause") or event.is_action_pressed("exit"):
         # toggle pause
         if _is_paused:
             resume()
