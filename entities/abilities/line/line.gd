@@ -12,6 +12,7 @@ static var SCENE = preload("res://entities/abilities/line/line.tscn")
 @onready var hitbox_timer: Timer = %HitboxTimer
 @onready var audio_on_hit: AudioStreamPlayer2D = %AudioOnHit
 @onready var particles: GPUParticles2D = %GPUParticles2D
+@onready var audio: AudioController = %AudioController
 
 var ctx: AbilityContext
 var _fade: float = 1.0
@@ -34,11 +35,7 @@ func _ready() -> void:
     hitbox.global_position = target_position
     
     # audio
-    NodeUtil.move_up_in_tree(audio_on_hit)
-    audio_on_hit.finished.connect(audio_on_hit.queue_free)
-    audio_on_hit.stream = config.audio_on_hit
-    audio_on_hit.global_position = target_position
-    audio_on_hit.play()
+    audio.play(config.audio_on_hit)
     
     # particles
     particles.emitting = false

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="AudioConfig" format=3 uid="uid://bgmolh0mwh6k1"]
+
+[ext_resource type="Script" uid="uid://bg80dryvx7ftu" path="res://components/audio_controller/audio_config.gd" id="1_xpemh"]
+[ext_resource type="AudioStream" uid="uid://jfr0dku6pman" path="res://resources/audio_configs/universfield-classic-punch-impact-352711.mp3" id="2_m4bc6"]
+
+[resource]
+script = ExtResource("1_xpemh")
+name = "enemy damaged"
+stream = ExtResource("2_m4bc6")
+metadata/_custom_type_script = "uid://bg80dryvx7ftu"

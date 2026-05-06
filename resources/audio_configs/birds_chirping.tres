@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="AudioConfig" format=3 uid="uid://cuy250k3x6qnm"]
+
+[ext_resource type="Script" uid="uid://bg80dryvx7ftu" path="res://components/audio_controller/audio_config.gd" id="1_e7hod"]
+[ext_resource type="AudioStream" uid="uid://rk5bwbdka51p" path="res://resources/audio_configs/soundreality-spring-forest-nature-332842.mp3" id="2_5uggv"]
+
+[resource]
+script = ExtResource("1_e7hod")
+name = "birds chirping"
+stream = ExtResource("2_5uggv")
+type = 1
+metadata/_custom_type_script = "uid://bg80dryvx7ftu"

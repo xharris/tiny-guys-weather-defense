@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bkfwwx5v63cyq" path="res://components/shadow/shadow.tscn" id="3_61ikd"]
 [ext_resource type="PackedScene" uid="uid://hgobe6jntfw6" path="res://components/hp/hp.tscn" id="4_dt443"]
 [ext_resource type="PackedScene" uid="uid://rsij4bxwpmrc" path="res://components/hitbox/hitbox.tscn" id="5_4wwj3"]
+[ext_resource type="PackedScene" uid="uid://dwllh2tt6mcgx" path="res://components/audio_controller/audio_controller.tscn" id="8_721x4"]
 
 [node name="Enemy" type="CharacterBody2D" unique_id=1221818744]
 motion_mode = 1
@@ -14,7 +15,6 @@ script = ExtResource("1_ksmh7")
 
 [node name="Shadow" parent="." unique_id=563252791 instance=ExtResource("3_61ikd")]
 unique_name_in_owner = true
-size = 3.0
 
 [node name="Vfx" parent="." unique_id=338783177 instance=ExtResource("2_d50e0")]
 unique_name_in_owner = true
@@ -32,3 +32,6 @@ unique_name_in_owner = true
 unique_name_in_owner = true
 
 [node name="DeathParticles" type="GPUParticles2D" parent="." unique_id=1955218288]
+
+[node name="AudioController" parent="." unique_id=1518854675 instance=ExtResource("8_721x4")]
+unique_name_in_owner = true

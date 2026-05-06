@@ -12,23 +12,26 @@ class AudioInstance extends RefCounted:
 static var VOLUME_DB = preload("res://resources/curves/volume_db.tres")
 static var _instances: Array[AudioInstance]
 
+@export var autoplay: AudioConfig
+
 func play(config: AudioConfig):
     if not config:
+        _dev.warn("no config")
         return
     _dev.dump("play {0}", [config.name])
     
     # get count of instances already playing this audio
     var count = 0
     for i in _instances:
-        if i.config.is_equal(config):
+        if is_instance_valid(i.stream) and i.config.is_equal(config):
             count += 1
-            
+
     # check instance count limit
     var limit = config.limit
     if config.type == AudioConfig.AudioType.MUSIC:
         limit = max(1, limit)
-    if config.limit > 0 and count >= config.limit:
-        _dev.dump("reached instance count limit of {0}", [config.limit])
+    if limit > 0 and count >= limit:
+        _dev.dump("reached instance count limit of {0}", [limit])
         return
     
     # create audio instance
@@ -46,8 +49,11 @@ func play(config: AudioConfig):
 
 func _ready() -> void:
     add_to_group(Groups.audio_controller)
+    if autoplay:
+        play.call_deferred(autoplay)
 
 func _process(delta: float) -> void:
+    _instances = _instances.filter(func(i): return is_instance_valid(i.stream))
     for i in _instances:
         if i.source == self and i.use_source_position:
             i.stream.global_position = global_position

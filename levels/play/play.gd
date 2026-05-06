@@ -1,7 +1,7 @@
 extends Node2D
 class_name Play
 
-var _dev = Dev.new()
+var _dev = Dev.new(true)
 
 static var WAVES = preload("res://resources/curves/waves.tres")
 static var CAMERA_OFFSET = preload("res://resources/curves/camera_offset.tres")

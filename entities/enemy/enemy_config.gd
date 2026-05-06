@@ -14,3 +14,6 @@ class_name EnemyConfig
 @export var hitbox: HitboxConfig
 @export var hitbox_on_hit_effects: Array[OnHitEffect]
 @export var shadow_offset: Vector2
+
+@export_group("Audio", "audio")
+@export var audio_on_take_damage: AudioConfig

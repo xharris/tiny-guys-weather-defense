@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://u76j2jut12nu" path="res://resources/abilities/lightning_strike/lightning.png" id="4_ycvlt"]
 [ext_resource type="Texture2D" uid="uid://dw1bji3w8phku" path="res://resources/abilities/raindrop/orb.png" id="5_ycvlt"]
 [ext_resource type="Material" uid="uid://fr7pfa0wefxr" path="res://resources/abilities/lightning_strike/lightning_strike_particles.tres" id="6_gtq8f"]
+[ext_resource type="PackedScene" uid="uid://dwllh2tt6mcgx" path="res://components/audio_controller/audio_controller.tscn" id="7_mrc63"]
 
 [node name="Line" type="Node2D" unique_id=436218292]
 script = ExtResource("1_j1fhi")
@@ -38,3 +39,6 @@ amount = 4
 texture = ExtResource("5_ycvlt")
 explosiveness = 0.9
 process_material = ExtResource("6_gtq8f")
+
+[node name="AudioController" parent="." unique_id=1518854675 instance=ExtResource("7_mrc63")]
+unique_name_in_owner = true

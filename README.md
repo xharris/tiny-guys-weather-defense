@@ -8,11 +8,11 @@
     - [x] Stats (ie. Crit chance)
 - [ ] Pause UI
     - [x] Open with 'P' or 'Esc'
-    - [ ] Adjust volume
-        - [ ] Master
-        - [ ] Music
-        - [ ] SFX
-    - [ ] Exit
+    - [x] Adjust volume
+        - [x] Master
+        - [x] Music
+        - [x] SFX
+    - [x] Exit
 - [ ] AudioPlayer component
     - [ ] Can adjust volume of audio type (sfx, music, master)
     - [ ] Improve positional audio
@@ -20,23 +20,36 @@
             - [ ] Only plays once
             - [ ] Position should be average position of all ants?
     - [ ] Forest audio effects? (ie. reverb)
+- [ ] Rework controls
+    - [ ] Project a small cone in aim direction
+    - [ ] Hold primary to enable targeting
+    - [ ] While targeting, every 0.2s an enemy in the cone is locked-on (ordered by closest position)
+    - [ ] While targeting, lower movement speed / turn rate
+    - [ ] Release to use ability on all locked on targets
+    - [ ] Ability is released in order or targeting (~0.2s micro-delay)
 - [ ] Abilities
-    - [ ] Chance to repeat active ability on nearby target
+    - [ ] Remove crit
+    - [ ] Chance for ability to activate twice
+    - [ ] Gradually widen cone while targeting
+    - [ ] 3s charge = lightning (rework)
     - [ ] Update raindrop vfx
     - [ ] Update lightning vfx
-    - [ ] Only 1 crit and non-crit ability allowed at once
-    - [ ] Tornado: hold click to spawn tornado
-        - [ ] Lowers movement speed
+    - [ ] Mini-tornado while charging
 - [ ] Enemies
     - [ ] Improve fly movement
-- [ ] Secondary button to do immediate 180 turn around base?
-    - [ ] May need to lock mouse and show controlled cursor sprite
-- [ ] Boss
-    - [ ] Every 10 waves?
+    - [ ] Update ant to use velocity instead of setting position manually
+- [ ] L/R triggers to do quick 90 deg turns?
+    - [ ] May need to lock mouse and show controlled cursor sprite, or just switch to controller-only and worry about kbm later
+- [ ] Boss (robots) that have one-shot attacks on player?
     - [ ] Spawn at certain time of day
-    - [ ] Day, Spider robot that shoots webs
+    - [ ] Appears on certain days (day 3, day 6, day 10, etc)
+    - [ ] Spider
+        - [ ] Day
+        - [ ] Shoot stun webs
+        - [ ] Dash and swipe attack with leg
     - [ ] Night, Firefly robot with laser beam or something
 
 ## Inspiration
 
-![Rain](https://imgur.com/let-rain-oc-mrICIdC)
+- ![Rain](https://imgur.com/let-rain-oc-mrICIdC)
+- Staccato choir samples, Voices of the Opera

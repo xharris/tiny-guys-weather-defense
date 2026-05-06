@@ -2,6 +2,7 @@
 
 [ext_resource type="Resource" uid="uid://yr5ohuw52dy3" path="res://resources/enemies/enemy_hitbox.tres" id="1_7ndto"]
 [ext_resource type="Script" uid="uid://rauoa0p62aej" path="res://components/hitbox/on_hit_effect.gd" id="1_fsjjl"]
+[ext_resource type="Resource" uid="uid://bgmolh0mwh6k1" path="res://resources/audio_configs/enemy_damaged.tres" id="1_r40yp"]
 [ext_resource type="Resource" uid="uid://bwttxwv06t6br" path="res://resources/enemies/ants/ant_orbit_toward.tres" id="2_hhkiw"]
 [ext_resource type="Script" uid="uid://tt4rv2874odu" path="res://entities/enemy/enemy_config.gd" id="2_ti3x6"]
 [ext_resource type="Resource" uid="uid://cpkddwttp2bn3" path="res://resources/on_hit_effects/enemy_deal_low_damage.tres" id="3_dnwpf"]
@@ -15,4 +16,5 @@ initial_state = ExtResource("2_hhkiw")
 hitbox = ExtResource("1_7ndto")
 hitbox_on_hit_effects = Array[ExtResource("1_fsjjl")]([ExtResource("3_dnwpf")])
 shadow_offset = Vector2(4, 13)
+audio_on_take_damage = ExtResource("1_r40yp")
 metadata/_custom_type_script = "uid://tt4rv2874odu"

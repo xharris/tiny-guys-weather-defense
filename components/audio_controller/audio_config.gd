@@ -10,12 +10,11 @@ enum AudioType {SFX, MUSIC}
 ## Limit how many instances of this audio can play
 @export var limit: int
 
-func get_bus_index() -> int:
-    return type
-
 func get_bus_name() -> StringName:
-    AudioServer.set_bus_name(get_bus_index(), AudioType.find_key(type))
-    return AudioServer.get_bus_name(get_bus_index())
+    var bus_name: StringName = AudioType.find_key(type)
+    if AudioServer.get_bus_index(bus_name) != -1:
+        return bus_name
+    return &"Master"
 
 func is_equal(other: AudioConfig) -> bool:
     return name == other.name

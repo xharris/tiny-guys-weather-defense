@@ -12,7 +12,7 @@ enum ParticlesPosition {END, START}
 @export var hitbox_on_hit_effects: Array[OnHitEffect]
 
 @export_group("Audio", "audio")
-@export var audio_on_hit: AudioStream
+@export var audio_on_hit: AudioConfig
 
 @export_group("Particles", "particles")
 @export var particles_position: ParticlesPosition

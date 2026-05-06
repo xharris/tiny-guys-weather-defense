@@ -19,9 +19,9 @@
 [ext_resource type="Resource" uid="uid://b30vwna6y8vvw" path="res://resources/pause_items/sfx_vol.tres" id="7_484km"]
 [ext_resource type="Resource" uid="uid://2by8yepbsoke" path="res://resources/weathers/night.tres" id="7_742e6"]
 [ext_resource type="Resource" uid="uid://dd2rci8sit2vd" path="res://resources/pause_items/music_vol.tres" id="8_0gck6"]
-[ext_resource type="AudioStream" uid="uid://rk5bwbdka51p" path="res://resources/music/soundreality-spring-forest-nature-332842.mp3" id="8_me25x"]
 [ext_resource type="PackedScene" uid="uid://dwllh2tt6mcgx" path="res://components/audio_controller/audio_controller.tscn" id="9_0gck6"]
 [ext_resource type="Resource" uid="uid://djqgs0ve6ehp7" path="res://resources/states/play_title_screen.tres" id="9_bavt8"]
+[ext_resource type="Resource" uid="uid://cuy250k3x6qnm" path="res://resources/audio_configs/birds_chirping.tres" id="10_ktq7p"]
 [ext_resource type="PackedScene" uid="uid://c3w0pmm7l0asa" path="res://components/state_machine/state_machine.tscn" id="13_x4po3"]
 
 [sub_resource type="Gradient" id="Gradient_bavt8"]
@@ -53,6 +53,7 @@ unique_name_in_owner = true
 items = Array[ExtResource("5_wksjx")]([ExtResource("6_do7n8"), ExtResource("8_0gck6"), ExtResource("7_484km")])
 
 [node name="AudioController" parent="." unique_id=1518854675 instance=ExtResource("9_0gck6")]
+autoplay = ExtResource("10_ktq7p")
 
 [node name="VfxWeather" parent="." unique_id=854038026 node_paths=PackedStringArray("texture_rects") instance=ExtResource("2_f2ucs")]
 unique_name_in_owner = true
@@ -148,8 +149,3 @@ disabled = true
 unique_name_in_owner = true
 current = ExtResource("9_bavt8")
 ui = NodePath("../SpatialUI")
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=778679059]
-stream = ExtResource("8_me25x")
-volume_db = -25.0
-autoplay = true

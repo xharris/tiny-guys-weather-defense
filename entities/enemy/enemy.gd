@@ -11,6 +11,7 @@ static var HP = preload("res://resources/curves/enemy_hp.tres")
 @onready var hitbox_shape: CollisionShape2D = %CollisionShape2D
 @onready var vfx: Vfx = %Vfx
 @onready var shadow: Shadow = %Shadow
+@onready var audio: AudioController = %AudioController
 
 @export var config: EnemyConfig
 
@@ -27,6 +28,7 @@ func _ready() -> void:
         state.switch(config.initial_state)
 
 func _on_hp_damaged(_amount: int):
+    audio.play(config.audio_on_take_damage)
     vfx.hurt = 1.0
     vfx.bounce()
 

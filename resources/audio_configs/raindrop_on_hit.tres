@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="AudioConfig" format=3 uid="uid://1m5resrmm6q8"]
+
+[ext_resource type="Script" uid="uid://bg80dryvx7ftu" path="res://components/audio_controller/audio_config.gd" id="1_5b4ia"]
+[ext_resource type="AudioStream" uid="uid://jfr0dku6pman" path="res://resources/audio_configs/universfield-classic-punch-impact-352711.mp3" id="2_tjv02"]
+
+[resource]
+script = ExtResource("1_5b4ia")
+name = "Raindrop Hit"
+stream = ExtResource("2_tjv02")
+metadata/_custom_type_script = "uid://bg80dryvx7ftu"
