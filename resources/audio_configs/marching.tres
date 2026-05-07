@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="AudioConfig" format=3 uid="uid://gfcp1d6e3kc4"]
+
+[ext_resource type="Script" uid="uid://bg80dryvx7ftu" path="res://components/audio_controller/audio_config.gd" id="1_yhh7b"]
+[ext_resource type="AudioStream" uid="uid://0uataoisotxs" path="res://resources/audio_configs/kakaist-marching-site-sfx-377667.mp3" id="2_d4ukm"]
+
+[resource]
+script = ExtResource("1_yhh7b")
+name = "marching"
+stream = ExtResource("2_d4ukm")
+limit = 1
+remove_with_node = true
+metadata/_custom_type_script = "uid://bg80dryvx7ftu"

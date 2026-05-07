@@ -25,6 +25,7 @@ func _ready() -> void:
     if config:
         hp.current = HP.sample(config.hp)
         state.switch(config.initial_state)
+        name = config.name
 
 func _on_hp_damaged(_amount: int):
     audio.play(config.audio_on_take_damage)

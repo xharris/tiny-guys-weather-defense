@@ -6,16 +6,17 @@
     - [x] Abilities
     - [x] Cooldowns
     - [x] Stats (ie. Crit chance)
-- [ ] Pause UI
+- [x] Pause UI
     - [x] Open with 'P' or 'Esc'
     - [x] Adjust volume
         - [x] Master
         - [x] Music
         - [x] SFX
     - [x] Exit
-- [ ] AudioPlayer component
-    - [ ] Can adjust volume of audio type (sfx, music, master)
-    - [ ] Improve positional audio
+    - [ ] Polish style
+- [x] AudioPlayer component
+    - [x] Can adjust volume of audio type (sfx, music, master)
+    - [x] Improve positional audio
         - Ants
             - [ ] Only plays once
             - [ ] Position should be average position of all ants?

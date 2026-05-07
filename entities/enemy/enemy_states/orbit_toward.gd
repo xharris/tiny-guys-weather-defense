@@ -8,7 +8,7 @@ const META_AUDIO_PLAYER = &"orbit_toward_audio_player"
 static var VELOCITY = preload("res://resources/curves/orbit_toward_velocity.tres")
 
 @export_range(0, 1, 0.1) var velocity: float = 0.0
-@export var audio: AudioStream
+@export var audio: AudioConfig
 @export var volume_db: float = -10
 #@export var orbit_speed: float = 0.0 # TODO
 #@export var close_distance_speed: float = 0.0 # TODO
@@ -24,18 +24,8 @@ func _exit(me: StateMachine):
 func _process(me: StateMachine, delta: float):
     var data = Metadata.get_data(me)
     var base = Base.get_closest(me)
-    
-    if audio and me.get_tree().get_node_count_in_group("only_one_orbit_audio") == 0:
-        # play audio
-        var player = AudioStreamPlayer2D.new()
-        player.add_to_group("only_one_orbit_audio")
-        me.set_meta(META_AUDIO_PLAYER, player)
-        player.volume_db = volume_db
-        player.autoplay = true
-        player.stream = audio
-        player.attenuation = 0.5
-        me.add_child(player)
-    
+    if me.audio:
+        me.audio.play(audio)
     if base and me.character:
         data.orbit_toward_angle += delta * 0.2
         var current_dist = me.global_position.distance_to(base.global_position)

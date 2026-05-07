@@ -9,6 +9,7 @@ enum AudioType {SFX, MUSIC}
 @export_range(0, 1, 0.1) var volume: float = 1.0
 ## Limit how many instances of this audio can play
 @export var limit: int
+@export var remove_with_node: bool
 
 func get_bus_name() -> StringName:
     var bus_name: StringName = AudioType.find_key(type)

@@ -22,8 +22,10 @@ unique_name_in_owner = true
 [node name="EnemySprite" parent="Vfx" unique_id=100549976 instance=ExtResource("2_im2q6")]
 unique_name_in_owner = true
 
-[node name="StateMachine" parent="." unique_id=1767894804 instance=ExtResource("3_3fvr7")]
+[node name="StateMachine" parent="." unique_id=1767894804 node_paths=PackedStringArray("character", "audio") instance=ExtResource("3_3fvr7")]
 unique_name_in_owner = true
+character = NodePath("..")
+audio = NodePath("../AudioController")
 
 [node name="Hp" parent="." unique_id=1543573155 instance=ExtResource("4_dt443")]
 unique_name_in_owner = true

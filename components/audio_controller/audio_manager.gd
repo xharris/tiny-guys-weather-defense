@@ -32,3 +32,10 @@ func _process(delta: float) -> void:
         var config = audio_configs[type]
         # set bus volume
         _set_volume(config)
+        
+    # iterate audio instances
+    for i in AudioController._instances:
+        if not is_instance_valid(i.stream):
+            continue
+        if i.source and is_instance_valid(i.source) and i.use_source_position:
+            i.stream.global_position = i.source.global_position

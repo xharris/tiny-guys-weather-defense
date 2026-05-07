@@ -10,6 +10,7 @@ static var UI_DISMISS_METHODS = ["dismiss", "ui_hide"]
 @export var current: State
 @export var ui: Node
 @export var ability_ctrl: AbilityController
+@export var audio: AudioController
 
 var duration: float = 0.0
 var prev_state: State
