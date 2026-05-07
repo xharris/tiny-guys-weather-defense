@@ -29,7 +29,7 @@ func _load():
         return
     var f = FileAccess.open(SAVE_PATH, FileAccess.READ)
     _data.merge(JSON.parse_string(f.get_as_text()), true)
-    _dev.dump("load from {0}", [ProjectSettings.globalize_path(SAVE_PATH)])
+    _dev.dump("load from {0} -> {1}", [ProjectSettings.globalize_path(SAVE_PATH), _data])
 
 func _process(delta: float) -> void:
     if _changed:

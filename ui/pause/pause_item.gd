@@ -23,7 +23,7 @@ func _ready() -> void:
         slider.min_value = 0
         slider.max_value = 100
         slider.step = 100.0 / config.slider_steps
-        slider.tick_count = config.slider_steps
+        slider.tick_count = config.slider_steps + 1
         # set initial value
         var value = Settings.get_setting(config.setting_key, config.slider_default_value)
         slider.value = value * 100.0

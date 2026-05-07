@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://81aytbj1kgv4" path="res://entities/abilities/drop/drop_config.gd" id="1_hvl04"]
 [ext_resource type="Script" uid="uid://46y1q2gys7mw" path="res://components/ability_controller/ability_can_pick.gd" id="1_nihm3"]
+[ext_resource type="Resource" uid="uid://1m5resrmm6q8" path="res://resources/audio_configs/raindrop_on_hit.tres" id="1_r6u3a"]
 [ext_resource type="Script" uid="uid://rauoa0p62aej" path="res://components/hitbox/on_hit_effect.gd" id="1_sx7ks"]
 [ext_resource type="Resource" uid="uid://bq0s1wqow24ym" path="res://resources/abilities/basic_hitbox.tres" id="1_u6q7w"]
 [ext_resource type="Texture2D" uid="uid://dw1bji3w8phku" path="res://resources/abilities/raindrop/orb.png" id="2_ifail"]
@@ -21,6 +22,7 @@ trail = ExtResource("3_f0cg8")
 on_hit_effects = Array[ExtResource("1_sx7ks")]([ExtResource("2_sx7ks")])
 hitbox = ExtResource("1_u6q7w")
 audio_on_land = ExtResource("2_iwyxt")
+audio_on_hit = ExtResource("1_r6u3a")
 particles_amount = 3
 particles_material = ExtResource("4_2hse0")
 name = "Raindrop"

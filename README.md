@@ -43,6 +43,7 @@
 - [ ] Boss (robots) that have one-shot attacks on player?
     - [ ] Spawn at certain time of day
     - [ ] Appears on certain days (day 3, day 6, day 10, etc)
+    - [ ] Wand emits beam of light at night?
     - [ ] Spider
         - [ ] Day
         - [ ] Shoot stun webs

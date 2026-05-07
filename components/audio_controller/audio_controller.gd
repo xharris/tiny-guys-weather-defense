@@ -16,7 +16,7 @@ static var _instances: Array[AudioInstance]
 
 func play(config: AudioConfig):
     if not config:
-        _dev.warn("no config")
+        _dev.warn("no config given to {0}", [get_path()])
         return
     _dev.dump("play {0}", [config.name])
     
@@ -42,8 +42,10 @@ func play(config: AudioConfig):
     instance.stream = AudioStreamPlayer2D.new()
     get_tree().root.add_child(instance.stream)
     instance.stream.stream = config.stream
+    # set bus and volume
     instance.stream.bus = config.get_bus_name()
     instance.stream.volume_db = VOLUME_DB.sample(config.volume)
+    # play
     instance.stream.play()
     _instances.append(instance)
 

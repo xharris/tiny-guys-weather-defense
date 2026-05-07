@@ -21,6 +21,7 @@
 [ext_resource type="Resource" uid="uid://dd2rci8sit2vd" path="res://resources/pause_items/music_vol.tres" id="8_0gck6"]
 [ext_resource type="PackedScene" uid="uid://dwllh2tt6mcgx" path="res://components/audio_controller/audio_controller.tscn" id="9_0gck6"]
 [ext_resource type="Resource" uid="uid://djqgs0ve6ehp7" path="res://resources/states/play_title_screen.tres" id="9_bavt8"]
+[ext_resource type="PackedScene" uid="uid://b4in5153yrd07" path="res://components/audio_controller/audio_manager.tscn" id="9_ktq7p"]
 [ext_resource type="Resource" uid="uid://cuy250k3x6qnm" path="res://resources/audio_configs/birds_chirping.tres" id="10_ktq7p"]
 [ext_resource type="PackedScene" uid="uid://c3w0pmm7l0asa" path="res://components/state_machine/state_machine.tscn" id="13_x4po3"]
 
@@ -51,6 +52,13 @@ colors = ExtResource("3_wksjx")
 [node name="Pause" parent="NonDiageticUI" unique_id=761146018 instance=ExtResource("4_xq3e8")]
 unique_name_in_owner = true
 items = Array[ExtResource("5_wksjx")]([ExtResource("6_do7n8"), ExtResource("8_0gck6"), ExtResource("7_484km")])
+
+[node name="AudioManager" parent="." unique_id=418393622 instance=ExtResource("9_ktq7p")]
+master_audio = ExtResource("6_do7n8")
+audio_configs = Dictionary[int, ExtResource("5_wksjx")]({
+0: ExtResource("7_484km"),
+1: ExtResource("8_0gck6")
+})
 
 [node name="AudioController" parent="." unique_id=1518854675 instance=ExtResource("9_0gck6")]
 autoplay = ExtResource("10_ktq7p")

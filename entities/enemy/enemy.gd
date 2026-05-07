@@ -8,7 +8,6 @@ static var HP = preload("res://resources/curves/enemy_hp.tres")
 @onready var state: StateMachine = %StateMachine
 @onready var hp: Hp = %Hp
 @onready var hitbox: Hitbox = %Hitbox
-@onready var hitbox_shape: CollisionShape2D = %CollisionShape2D
 @onready var vfx: Vfx = %Vfx
 @onready var shadow: Shadow = %Shadow
 @onready var audio: AudioController = %AudioController
